@@ -1,0 +1,123 @@
+/* theme*/
+.nav-bg {
+  background-color: rgba(77, 95, 138, 1);
+}
+
+.side-nav-bg {
+  background-color: rgba(77, 95, 138, 1);
+}
+
+.navbar-light {
+  background-color: rgba(77, 95, 138, 1);
+  color: rgba(206, 172, 104, 1);
+}
+body,
+.light-theme {
+  background-color: rgb(120, 133, 161);
+}
+
+.jumbotron,
+.light-theme {
+  background-color: rgb(226, 232, 245);
+}
+
+.text-white {
+  color: rgba(255, 233, 190, 1);
+}
+
+.btn-primary {
+  background-color: rgba(134, 67, 134, 1);
+  border: 1px solid rgba(134, 67, 134, 1);
+  width: 250px;
+}
+
+.btn-primary:hover {
+  background-color: rgba(116, 41, 116, 1);
+  border: 1px solid rgba(116, 41, 116, 1);
+}
+
+/*Animations*/
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
+/*Fonts*/
+h1,
+.display-2 {
+  font-family: "Goldman", sans-serif;
+}
+
+/* Navbar */
+#about-link,
+#projects-link,
+#contact-link {
+  color: white;
+  font-size: 20px;
+}
+#about-link:hover,
+#projects-link:hover,
+#contact-link:hover {
+  color: orange;
+}
+
+/* Technologys */
+#divider {
+  border: none;
+  height: 1px;
+  background-color: rgb(68, 67, 67);
+}
+
+i {
+  color: rgba(50, 71, 119, 1);
+  cursor: pointer;
+}
+
+/*About*/
+
+.side-nav span:hover {
+  background-color: rgba(116, 41, 116, 1);
+  border-radius: 4px 10px 10px 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: rgba(134, 67, 134, 1);
+  border-radius: 0px 10px 10px 0px;
+}
+
+.history {
+  display: none;
+}
+
+.game {
+  display: none;
+}
+.start-game:hover {
+  /* text-decoration: underline; */
+  color: orange;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+/* Contact */
+.contact {
+  margin: 100px;
+  min-width: 250px;
+  background-color: rgb(226, 232, 245);
+}
+
+.form-element {
+  margin: 10px;
+  min-width: 125px;
+}
+
+.form-button {
+  margin: 25px;
+}
