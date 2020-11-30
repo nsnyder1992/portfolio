@@ -58,7 +58,10 @@ h1,
   font-family: "Goldman", sans-serif;
 }
 
+/* ---------------------------------------------------------- */
 /* Horizontal Scroll sections */
+/* ---------------------------------------------------------- */
+
 .scrollable {
   background-color: transparent;
   overflow: auto;
