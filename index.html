@@ -48,17 +48,19 @@
                     <p class="display-4 text-center">Web Developer</p>
                     <hr class="my-4" id="divider">
                     <p class="lead text-center"><strong><u>Technologies:</u></strong></p>
-                    <div class="container-fluid technologies">
-                        <div class="row text-centers">
-                            <a href="#fuji-content" class="col nav-icon"><i class="fab fa-python text-center fa-10x grow" id="python"></i></a>
-                            <a href="#static-content" class="col nav-icon"><i class="col fab fa-html5 text-center fa-10x grow" id="html"></i></a>
-                            <a href="#creature-content" class="col nav-icon"><i class="col fab fa-css3-alt text-center fa-10x grow" id="css"></i></a>
-                            <a href="#game-content" class="col nav-icon"><i class="col fab fa-js-square text-center fa-10x grow" id="js"></i></a>
+                    <div class="technologies">
+                        <div class="scrollable">
+                                <a href="#projects" class="nav-icon"><i class="fab fa-python text-center fa-10x grow" id="python"></i></a>
+                                <a href="#projects" class="nav-icon"><i class="col fab fa-html5 text-center fa-10x grow" id="html"></i></a>
+                                <a href="#projects" class="nav-icon"><i class="col fab fa-css3-alt text-center fa-10x grow" id="css"></i></a>
+                                <a href="#projects" class="nav-icon"><i class="col fab fa-js-square text-center fa-10x grow" id="js"></i></a>
                         </div>
                         <br>
-                        <div class="row">
-                            <div class="col text-center">
-                                <a class="btn btn-lg btn-primary" href="#projects" role="button">Projects</a>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-lg btn-primary" href="#projects" role="button">Projects</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,7 @@
         </div>
     </div>
 
-    <!-- Contact Section-->>
+    <!-- Contact Section-->
     <div class="contact modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog  modal-lg">
             <div class="modal-content">
@@ -158,98 +160,89 @@
         <div class="container-fluid projects-container">
             <div class="row">
                 <h3 class="display-4 col-md-12 text-center"><strong>Projects</strong></h3>
-                <div class="container-fluid text-center">
-                    <div class="row text-center">
-                        <!-- CSS Creature: https://codepen.io/sicknick92/pen/QWEJeLq -->
-                        <div class="col text-center">
-                            <div class="thumbnail creature-thumbnail grow selected" id="creature-thumbnail">
-                                <h5 class="text-white">CSS Creature</h5>
-                                <i class="fab fa-html5 fa-3x text-center"></i>
-                                <i class="fab fa-css3-alt fa-3x text-center"></i>
-                            </div>
-                        </div>
-                        <!-- Fuji Seal -->
-                        <div class="col text-center">
-                            <div class="thumbnail fuji-thumbnail grow" id="fuji-thumbnail">
-                                <h5 class="text-white">Parameter Extractor</h5>
-                                <i class="col fab fa-python text-center fa-3x grow"></i>
-                            </div>
-                        </div>
-                        <!-- Static Layout: https://nsnyder1992.github.io/static_layout/ -->
-                        <div class="col text-center">
-                            <div class="thumbnail static-thumbnail grow" id="static-thumbnail">
-                                <h5 class="text-white">Static Layout</h5>
-                                <i class="fab fa-html5 fa-3x text-center"></i>
-                                <i class="fab fa-js-square text-center fa-3x grow"></i>
-                                <i class="fab fa-css3-alt fa-3x text-center"></i>
-                            </div>
-                        </div>
-                        <!-- API Challenge -->
-                        <!-- <div class="col text-center">
-                            <div class="thumbnail game-thumbnail grow" id="game-thumbnail">
-                                <h5 class="text-white">RPG-Game</h5>
-                                <i class="fab fa-html5 fa-3x text-center"></i>
-                                <i class="fab fa-js-square text-center fa-3x grow"></i>
-                                <i class="fab fa-css3-alt fa-3x text-center"></i>
-                            </div>
+            </div>
+            <div class="text-center">
+                <div class="scrollable">
+                    <!-- CSS Creature: https://codepen.io/sicknick92/pen/QWEJeLq -->
+                    <div class="thumbnail creature-thumbnail selected" id="creature-thumbnail">
+                        <h5 class="text-white">CSS Creature</h5>
+                        <i class="fab fa-html5 fa-3x text-center"></i>
+                        <i class="fab fa-css3-alt fa-3x text-center"></i>
+                    </div>
+                    <!-- Fuji Seal -->
+                    <div class="thumbnail fuji-thumbnail" id="fuji-thumbnail">
+                        <h5 class="text-white">Parameter Extractor</h5>
+                        <i class="col fab fa-python text-center fa-3x"></i>
+                    </div>
+                    <!-- Static Layout: https://nsnyder1992.github.io/static_layout/ -->
+                    <div class="thumbnail static-thumbnail" id="static-thumbnail">
+                        <h5 class="text-white">Static Layout</h5>
+                        <i class="fab fa-html5 fa-3x text-center"></i>
+                        <i class="fab fa-js-square text-center fa-3x"></i>
+                        <i class="fab fa-css3-alt fa-3x text-center"></i>
+                    </div>
+                    <!-- API Challenge -->
+                    <!-- <div class="thumbnail game-thumbnail" id="game-thumbnail">
+                            <h5 class="text-white">RPG-Game</h5>
+                            <i class="fab fa-html5 fa-3x text-center"></i>
+                            <i class="fab fa-js-square text-center fa-3x grow"></i>
+                            <i class="fab fa-css3-alt fa-3x text-center"></i>
                         </div> -->
-                        <!-- RPG Game -->  
-                        <div class="col text-center">
-                            <div class="thumbnail game-thumbnail grow" id="game-thumbnail">
-                                <h5 class="text-white">RPG-Game</h5>
-                                <i class="fab fa-js-square text-center fa-3x grow"></i>
-                            </div>
-                        </div>
-                    
-                        <div class="col-md-12 thumbnail-content fuji-content" id="fuji-content">
-                            <h2>Parameter Extractor</h2>
-                            <p class="lead text-left"><strong>Description: </strong>I was asked to develop software to connect to a PLC (Programable Logic Controller)
-                                and download/upload parameters, of the current recipes. Using python, wxpython, and Ethernet/IP (a common
-                                server/client Industrial Communication protocol) python library, I was able to accomplish this task. I setup a
-                                database, so that admins could login and add/remove certain parameters or even UDTs (classes in Ladder Logic
-                                programing).I also made a feature for field-service engineers (FSEs) to be able import/export parameters to CSV
-                                format. This came in handy when a operator would mess with the recipe and couldn't get it to work again, the FSE
-                                could just load the last working recipe!</p>
-                            <p class="lead  col-md-12 text-left">This project is owned by Fuji Seal and is proprietary software and can not be
-                                made public but below is a link to the README file and some screen Shots</p>
-                            <p class="lead text-center">README file: <a href="assets/docs/README.md"
-                                    class="download" download="README.md">README.md</a></p>
-                            <p class="lead text-center">Screenshots:</p>
-                            <div class="text-center">
-                                <img src="assets/img/Fuji_Veiw_Current_Recipe_values.png" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                                <img src="assets/img/FujiSealAdminUDTs.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                                <img src="assets/img/FujiSealAdminTags.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                                <img src="assets/img/FujiSealReadWrite.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                                <img src="assets/img/FujiSeal.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                                <img src="assets/img/FujiSealImportExportToCSV.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
-                            </div>
-                        </div>
-                        <div class="col-md-12 thumbnail-content creature-content show" id="creature-content">
-                            <h2>CSS Creature</h2>
-                            <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt="" class="thumbnail-img"></a>
-                            <p class="lead text-left"><strong>Description: </strong>This project was the first project I did at Eleven Fifty Academy. We were instructed to create a creature using only HTML & CSS. I decided to create Jack-o-lanterns that light up when you hover over them and add some motion to them to add more complexity</p>
-                            <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><i class="download fab fa-codepen fa-3x grow"></i></a>
-                        </div>
-                        <div class="col-md-12 thumbnail-content static-content" id="static-content">
-                            <h2>Static Layout</h2>
-                            <a href="https://nsnyder1992.github.io/static_layout/" target="blank" class="download"><img src="assets/img/static_layout.PNG" alt="" class="thumbnail-img"></a>
-                            <p class="lead text-left"><strong>Description: </strong>The second project done at Eleven Fifty Academy. I was tasked with recreating a static website from a provided list. I choose <a href="https://www.kastapp.co/" class="download">kastapp.co</a>. I used HTML, CSS & a small amount of JS.</p>
-                            <a href="https://github.com/nsnyder1992/static_layout" target="blank" class="download"><i class="fab fa-github fa-3x grow"></i></a>
-                        </div>
-                        <div class="col-md-12 thumbnail-content game-content" id="game-content">
-                            <h2>RPG-Game</h2>
-                            <a href="https://nsnyder1992.github.io/rpg-mini-game/" target="blank" class="download" target="blank"><img src="assets/img/rpg.PNG" alt="" class="thumbnail-img"></a>
-                            <p class="lead text-left"><strong>Description:</strong> I decided to make a mini-game to enhance my javascript understanding. I used a framework called <a href="https://phaser.io/" class="download">phaser.io</a>. This made the task a lot easier and I learn to use MVC to divide up my code so it was easier to maintain. If you are not on a mobile device, I've actually embedded it into this webpage as and easter egg! Read the about section and you might find it!!!</p>
-                            <a href="https://github.com/nsnyder1992/rpg-mini-game" target="blank" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
-                        </div>
-                        <!-- <div class="col-md-12 thumbnail-content api-content" id="api-content">
-                            <a href="#" class="download" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt=""
-                                    class="thumbnail-img"></a>
-                            <p class="lead text-left"><strong>Description: Place Holder</strong></p>
-                            <a href="#" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
-                        </div> -->
+                    <!-- RPG Game -->  
+                    <div class="thumbnail game-thumbnail" id="game-thumbnail">
+                        <h5 class="text-white">RPG-Game</h5>
+                        <i class="fab fa-js-square text-center fa-3x"></i>
                     </div>
                 </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-12 thumbnail-content fuji-content" id="fuji-content">
+                    <h2>Parameter Extractor</h2>
+                    <p class="lead text-left"><strong>Description: </strong>I was asked to develop software to connect to a PLC (Programable Logic Controller)
+                        and download/upload parameters, of the current recipes. Using python, wxpython, and Ethernet/IP (a common
+                        server/client Industrial Communication protocol) python library, I was able to accomplish this task. I setup a
+                        database, so that admins could login and add/remove certain parameters or even UDTs (classes in Ladder Logic
+                        programing).I also made a feature for field-service engineers (FSEs) to be able import/export parameters to CSV
+                        format. This came in handy when a operator would mess with the recipe and couldn't get it to work again, the FSE
+                        could just load the last working recipe!</p>
+                    <p class="lead  col-md-12 text-left">This project is owned by Fuji Seal and is proprietary software and can not be
+                        made public but below is a link to the README file and some screen Shots</p>
+                    <p class="lead text-center">README file: <a href="assets/docs/README.md"
+                            class="download" download="README.md">README.md</a></p>
+                    <p class="lead text-center">Screenshots:</p>
+                    <div class="text-center">
+                        <img src="assets/img/Fuji_Veiw_Current_Recipe_values.png" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                        <img src="assets/img/FujiSealAdminUDTs.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                        <img src="assets/img/FujiSealAdminTags.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                        <img src="assets/img/FujiSealReadWrite.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                        <img src="assets/img/FujiSeal.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                        <img src="assets/img/FujiSealImportExportToCSV.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                    </div>
+                </div>
+                <div class="col-md-12 thumbnail-content creature-content show" id="creature-content">
+                    <h2>CSS Creature</h2>
+                    <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt="" class="thumbnail-img"></a>
+                    <p class="lead text-left"><strong>Description: </strong>This project was the first project I did at Eleven Fifty Academy. We were instructed to create a creature using only HTML & CSS. I decided to create Jack-o-lanterns that light up when you hover over them and add some motion to them to add more complexity</p>
+                    <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><i class="download fab fa-codepen fa-3x grow"></i></a>
+                </div>
+                <div class="col-md-12 thumbnail-content static-content" id="static-content">
+                    <h2>Static Layout</h2>
+                    <a href="https://nsnyder1992.github.io/static_layout/" target="blank" class="download"><img src="assets/img/static_layout.PNG" alt="" class="thumbnail-img"></a>
+                    <p class="lead text-left"><strong>Description: </strong>The second project done at Eleven Fifty Academy. I was tasked with recreating a static website from a provided list. I choose <a href="https://www.kastapp.co/" class="download">kastapp.co</a>. I used HTML, CSS & a small amount of JS.</p>
+                    <a href="https://github.com/nsnyder1992/static_layout" target="blank" class="download"><i class="fab fa-github fa-3x grow"></i></a>
+                </div>
+                <div class="col-md-12 thumbnail-content game-content" id="game-content">
+                    <h2>RPG-Game</h2>
+                    <a href="https://nsnyder1992.github.io/rpg-mini-game/" target="blank" class="download" target="blank"><img src="assets/img/rpg.PNG" alt="" class="thumbnail-img"></a>
+                    <p class="lead text-left"><strong>Description:</strong> I decided to make a mini-game to enhance my javascript understanding. I used a framework called <a href="https://phaser.io/" class="download">phaser.io</a>. This made the task a lot easier and I learn to use MVC to divide up my code so it was easier to maintain. If you are not on a mobile device, I've actually embedded it into this webpage as and easter egg! Read the about section and you might find it!!!</p>
+                    <a href="https://github.com/nsnyder1992/rpg-mini-game" target="blank" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
+                </div>
+                <!-- <div class="col-md-12 thumbnail-content api-content" id="api-content">
+                    <a href="#" class="download" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt=""
+                            class="thumbnail-img"></a>
+                    <p class="lead text-left"><strong>Description: Place Holder</strong></p>
+                    <a href="#" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
+                </div> -->
             </div>
         </div>
     </div>
@@ -258,10 +251,10 @@
     <div class="container footer">
         <div class="row text-center">
             <div class="col-md-12">
-                <a href="https://github.com/nsnyder1992" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
-                <a href="https://www.linkedin.com/in/nick-snyder-47238a139/" target="blank"><i class="fab fa-linkedin-in fa-3x grow"></i></a>
-                <a href="https://codepen.io/sicknick92" target="blank"><i class="fab fa-codepen fa-3x grow"></i></a>
-                <a href="assets/docs/nick_snyder_resume.pdf" download="nick_snyder_resume.pdf"><i class="fas fa-file fa-3x grow"></i></a>
+                <a href="https://github.com/nsnyder1992" target="blank"><i class="fab fa-github fa-2x grow"></i></a>
+                <a href="https://www.linkedin.com/in/nick-snyder-47238a139/" target="blank"><i class="fab fa-linkedin-in fa-2x grow"></i></a>
+                <a href="https://codepen.io/sicknick92" target="blank"><i class="fab fa-codepen fa-2x grow"></i></a>
+                <a href="assets/docs/nick_snyder_resume.pdf" download="nick_snyder_resume.pdf"><i class="fas fa-file fa-2x grow"></i></a>
             </div>
         </div>
     </div>

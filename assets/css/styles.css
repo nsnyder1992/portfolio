@@ -58,6 +58,54 @@ h1,
   font-family: "Goldman", sans-serif;
 }
 
+/* Horizontal Scroll sections */
+.scrollable {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollable a {
+  display: inline-block;
+}
+
+.scrollable .thumbnail {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 721px) {
+  .scrollable {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-decoration: none;
+  }
+}
+
+/* Scrollbar Width*/
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: rgb(193, 198, 209);
+  border-radius: 5px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(120, 133, 161);
+  border-radius: 5px;
+}
+
+/* Scrollbar Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(77, 95, 138, 1);
+}
+
 /* ---------------------------------------------------------- */
 /* Navbar */
 /* ---------------------------------------------------------- */
@@ -102,6 +150,7 @@ h1,
 .about-container {
   max-width: 1550px;
 }
+
 .side-nav span:hover {
   background-color: rgba(116, 41, 116, 1);
   border-radius: 4px 10px 10px 4px;
@@ -160,11 +209,11 @@ h1,
 }
 
 .thumbnail h5 {
-  padding: 50px 0px;
+  padding: 0.5em 0px;
 }
 
 .thumbnail i {
-  padding: 0px 0px 25px;
+  padding: 0px 0px 0.5em;
   color: white;
 }
 
@@ -240,7 +289,7 @@ h1,
 /* ---------------------------------------------------------- */
 
 .footer i {
-  margin: 25px 25px;
+  margin: 15px 25px;
   color: rgb(36, 45, 66);
 }
 
