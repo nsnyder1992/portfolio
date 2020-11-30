@@ -13,14 +13,7 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
-
-    <!-- meta preview tags -->
-    <meta property="og:title" content="Jack-O-Lanterns" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://codepen.io/sicknick92/pen/QWEJeLq" />
-    <meta property="og:title" content="Jack-O-Lanterns" />
-
+    <link rel="stylesheet" href="assets/css/styles.css">  
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -34,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#" id="about-link">About<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#about" id="about-link">About<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="projects-link">Projects</a>
+                    <a class="nav-link" href="#projects" id="projects-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" id="contact-link">Contact</a>
+                    <span class="nav-link contact-me" id="contact-link">Contact</a>
                 </li>
             </ul>
         </div>
@@ -48,95 +41,226 @@
 
     <!-- Jumbotron Introduction -->
     <div class="jumbotron light-theme">
-        <h1 class="display-2 text-center">Nick Snyder</h1>
-        <p class="display-4 text-center">Web Developer</p>
-        <hr class="my-4" id="divider">
-        <p class="lead text-center"><strong><u>Technologies:</u></strong></p>
-        <div class="container-fluid technologies">
-            <div class="row text-centers">
-                <i class="col fab fa-python text-center fa-10x grow"></i>
-                <i class="col fab fa-css3-alt text-center fa-10x grow"></i>
-                <i class="col fab fa-js-square text-center fa-10x grow"></i>
-                <i class="col fab fa-html5 text-center fa-10x grow"></i>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col text-center">
-                    <a class="btn btn-lg btn-primary" href="" role="button">Projects</a>
+        <div class="container header-container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h1 class="display-2 text-center">Nick Snyder</h1>
+                    <p class="display-4 text-center">Web Developer</p>
+                    <hr class="my-4" id="divider">
+                    <p class="lead text-center"><strong><u>Technologies:</u></strong></p>
+                    <div class="container-fluid technologies">
+                        <div class="row text-centers">
+                            <a href="#projects" class="col nav-icon"><i class="fab fa-python text-center fa-10x grow" id="python"></i></a>
+                            <a href="#projects" class="col nav-icon"><i class="col fab fa-html5 text-center fa-10x grow" id="html"></i></a>
+                            <a href="#projects" class="col nav-icon"><i class="col fab fa-css3-alt text-center fa-10x grow" id="css"></i></a>
+                            <a href="#projects" class="col nav-icon"><i class="col fab fa-js-square text-center fa-10x grow" id="js"></i></a>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col text-center">
+                                <a class="btn btn-lg btn-primary" href="#projects" role="button">Projects</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-    </div>
-
-    <!-- About Section -->
-    <div class="container-fluid" id="about">
-        <h3 class="display-4 text-center text-white history show"><strong>About</strong></h3>
-        <h3 class="display-4 text-center game text-white"><strong>RPG Mini-Game</strong></h3>
-        <div class="col-md-2"></div>
-        <div class="col-md-10">
-            <div class="history show max-size">
-                <p class="lead text-white">
-                    I have been working in Industrial automation for 5 years. So I am not new to programing. 
-                    I have used several types of languages including but not limited to:
-                </p>
-                <ul class="text-white">
-                    <li>Ladder Logic</li>
-                    <li>Structured Text</li>
-                    <li>Sequential Flow Chart</li>
-                    <li>Python</li>
-                    <li>SQL</li>
-                    <li>Javascript</li>
-                </ul>
-                <p class="lead text-white">
-                    I am currently attending ElevenFifty Academy, to develop my Web Design skill"z".
-                </p>
-                <p class="lead text-white">
-                    I will be graduating from the bootstrap in March 2021, but I am looking for a place to work! So if you'd like to recruit me for a 
-                    full-time job or hire me for a freelance gig, click the button below! If you would like to play a game <span class="start-game" id="game-start">click here!</span>
-                </p>
-            </div>
-        </div>  
-        <div class="col-md-12 text-center">
-            <span class="btn btn-lg btn-primary" href="" role="button" id="contact-me">Contact me!</span>
-        </div>
-        <div class="game">
-            <div class="col-md-12 max-size text-center">
-                <iframe src="https://nsnyder1992.github.io/rpg-mini-game/" width="900" height="700" frameborder="0" class="text-center">Opps Game didn't load <i class="fas fa-frown" style="color: white; margin: 5px;"></i></iframe>
-            </div>
-            <div class="col-md-12 text-center">
-                <span class="btn btn-lg btn-primary" href="" role="button" id="go-back"><i class="fas fa-arrow-circle-left" style="color: white; margin: 5px;"></i>  Go back</span>
-            </div>
+            </div>   
         </div>
     </div>
 
-    <!-- Projects -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                
+    <!-- Contact Section-->>
+    <div class="contact modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center">Contact Me!</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://formspree.io/f/mvovbgny" method="POST" class="text-center">
+                        <div class="form-group">
+                            <div class="container-fluid">
+                                <div class="form-element row">
+                                    <label for="email" class="col-sm-3">Your email:</label>
+                                    <input type="email" class="form-control  col-sm-9" id='email'
+                                        aria-describedby="contactMe" name="_replyto">
+                                </div>
+                                <div class="form-element row">
+                                    <label for="email" class="col-sm-3">Subject:</label>
+                                    <input type="email" class="form-control  col-sm-9" id='email'
+                                        aria-describedby="contactMe" name="subject">
+                                </div>
+                                <div class="form-element row">
+                                    <label for="message" class="col-sm-3">Message:</label>
+                                    <textarea class="form-control col-sm-9" id="message" rows="3" name="message"></textarea>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary form-button">Send</button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="card contact text-center">
-        <div class="card-header text-center"><strong>Contact Me!</strong></div>
-        <form action="https://formspree.io/f/mvovbgny" method="POST" class="text-center">
-            <div class="form-group">
-                <div class="form-element t">
-                    <label for="email">Your email:</label>
-                    <input type="email" class="form-control" id='email' aria-describedby="contactMe" name="_replyto">
-                </div>
-                <div class="form-element">
-                    <label for="message">Your Message:</label>
-                    <textarea class="form-control" id="message" rows="3" name="message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary form-button">Send</button>
-            </div>
-        </form>
     </div>
     
+    <!-- About Section -->
+    <div class="container-fluid about-container" id="about">
+        <div class="row">
+            <h3 class="display-4 col-md-12 text-center text-white history show"><strong>About</strong></h3>
+            <h3 class="display-4 col-md-12 text-center game text-white"><strong>RPG Mini-Game</strong></h3>
+            <div class="col-md-3 text-center history show">
+                <img src="https://lh3.googleusercontent.com/-Y9EPzLJ9OJU/X7Pn8WaruZI/AAAAAAAAFRc/OsRq9459NVUG4UCO_MwxMtx9HCj9Fwi3gCEwYBhgLKtQDAL1OcqzF7t6MFqyjskTQtfF8lj1kfO4q036Ja-psgu7m3a56souaCz5s56FsE1ziTvx8FWzvWjM0jVjFhSbPKbNGeJjxkxbdz2ZFJEIawPMOiXhwfX5sD7_-xc4dijAQx3WjvlyrNS6SA7fTzA64Re1Xo_-nO4VyV_HnFueA0ctqIDPN-rxWsWSe8AQi2yWUYFYx4mO_ol31uo-c7zTFdlzPTV_xVi8Rx7Btn0n4pTtnBaD9FJir9twc8ij8JGnetCQ8IEB_2MA1jZAM9XbP_keDkFXbcoCCJV8iRUdyxDLjLVKTzOWHR06wLAKNdER3GxNlK5amPNyRpIWrl9mf4S-HCzpmrVMkZqOugppxVJCZxL6ieI-dmK_a6jHgHaXJT2pUHnYOrvk4RNjKz63UVbYJsEKOtRXgIdXhBBbN7spq2E2JqUqO9ijevai9NI4WWvLnh7WXnuhHbSZ0gvsewy6puvCe-0GRKXOiUZ21JW2gZ4SIlz17G1y3C0ZvIJ-2Wz_Wu2l1FGknJWgBiCqrFLWPL1QCu_UpdADUkLRHlFyUblDVsyFfEm_qsXwlW-k9FeENqaZhw-Sz32jeLTnTtMl-vKTASuVv0HjXGhBWfRFBMdA_MKjE-_0F/w140-h140-p/2020-11-17.jpg" alt="" width="250px">
+            </div>
+            <div class="col-md-9">
+                <div class="history show max-size">
+                    <p class="lead text-white">
+                        I have been working in Industrial automation for 5 years. So I am not new to programing. 
+                        I have used several types of languages including but not limited to:
+                    </p>
+                    <ul class="text-white">
+                        <li>Ladder Logic</li>
+                        <li>Structured Text</li>
+                        <li>Sequential Flow Chart</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <p class="lead text-white">
+                        I am currently attending ElevenFifty Academy, to develop my Web Design skill"z".
+                    </p>
+                    <p class="lead text-white">
+                        I will be graduating from the bootstrap in March 2021, but I am looking for a place to work! So if you'd like to recruit me for a 
+                        full-time job or hire me for a freelance gig, click the button below! If you would like to play a game <span class="start-game" id="game-start">click here!</span>
+                    </p>
+                </div>
+            </div>  
+            <div class="col-md-12 history show text-center">
+                <button class="btn btn-lg btn-primary contact-me" data-toggle="modal" data-target="contactModal">Contact me!</button>
+            </div>
+            <div class="game col-md-12">
+                <div class="col-md-12 max-size text-center">
+                    <iframe src="https://nsnyder1992.github.io/rpg-mini-game/" width="815" height="620" frameborder="0" class="text-center">Opps Game didn't load <i class="fas fa-frown" style="color: white; margin: 5px;"></i></iframe>
+                </div>
+                <div class="col-md-12 text-center">
+                    <span class="btn btn-lg btn-primary" href="" role="button" id="go-back"><i class="fas fa-arrow-circle-left" style="color: white; margin: 5px;"></i>  Go back</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects">
+        <div class="container-fluid projects-container">
+            <div class="row">
+                <h3 class="display-4 col-md-12 text-center"><strong>Projects</strong></h3>
+                <div class="container-fluid text-center">
+                    <div class="row text-center">
+                        <!-- CSS Creature: https://codepen.io/sicknick92/pen/QWEJeLq -->
+                        <div class="col text-center">
+                            <div class="thumbnail creature-thumbnail grow selected" id="creature-thumbnail">
+                                <h5 class="text-white">CSS Creature</h5>
+                                <i class="fab fa-html5 fa-3x text-center"></i>
+                                <i class="fab fa-css3-alt fa-3x text-center"></i>
+                            </div>
+                        </div>
+                        <!-- Fuji Seal -->
+                        <div class="col text-center">
+                            <div class="thumbnail fuji-thumbnail grow" id="fuji-thumbnail">
+                                <h5 class="text-white">Parameter Extractor</h5>
+                                <i class="col fab fa-python text-center fa-3x grow"></i>
+                            </div>
+                        </div>
+                        <!-- Static Layout: https://nsnyder1992.github.io/static_layout/ -->
+                        <div class="col text-center">
+                            <div class="thumbnail static-thumbnail grow" id="static-thumbnail">
+                                <h5 class="text-white">Static Layout</h5>
+                                <i class="fab fa-html5 fa-3x text-center"></i>
+                                <i class="fab fa-js-square text-center fa-3x grow"></i>
+                                <i class="fab fa-css3-alt fa-3x text-center"></i>
+                            </div>
+                        </div>
+                        <!-- API Challenge -->
+                        <!-- <div class="col text-center">
+                            <div class="thumbnail game-thumbnail grow" id="game-thumbnail">
+                                <h5 class="text-white">RPG-Game</h5>
+                                <i class="fab fa-html5 fa-3x text-center"></i>
+                                <i class="fab fa-js-square text-center fa-3x grow"></i>
+                                <i class="fab fa-css3-alt fa-3x text-center"></i>
+                            </div>
+                        </div> -->
+                        <!-- RPG Game -->  
+                        <div class="col text-center">
+                            <div class="thumbnail game-thumbnail grow" id="game-thumbnail">
+                                <h5 class="text-white">RPG-Game</h5>
+                                <i class="fab fa-js-square text-center fa-3x grow"></i>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-12 thumbnail-content fuji-content" id="fuji-content">
+                            <p class="lead text-left"><strong>Description: </strong>I was asked to develop software to connect to a PLC (Programable Logic Controller)
+                                and download/upload parameters, of the current recipes. Using python, wxpython, and Ethernet/IP (a common
+                                server/client Industrial Communication protocol) python library, I was able to accomplish this task. I setup a
+                                database, so that admins could login and add/remove certain parameters or even UDTs (classes in Ladder Logic
+                                programing).I also made a feature for field-service engineers (FSEs) to be able import/export parameters to CSV
+                                format. This came in handy when a operator would mess with the recipe and couldn't get it to work again, the FSE
+                                could just load the last working recipe!</p>
+                            <p class="lead  col-md-12 text-left">This project is owned by Fuji Seal and is proprietary software and can not be
+                                made public but below is a link to the README file and some screen Shots</p>
+                            <p class="lead text-center">README file: <a href="assets/docs/README.md"
+                                    class="download" download="README.md">README.md</a></p>
+                            <p class="lead text-center">Screenshots:</p>
+                            <div class="text-center">
+                                <img src="assets/img/Fuji_Veiw_Current_Recipe_values.png" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                                <img src="assets/img/FujiSealAdminUDTs.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                                <img src="assets/img/FujiSealAdminTags.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                                <img src="assets/img/FujiSealReadWrite.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                                <img src="assets/img/FujiSeal.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                                <img src="assets/img/FujiSealImportExportToCSV.PNG" alt="" class="col-md-4 col-sm-6 img-fluid screenshots">
+                            </div>
+                        </div>
+                        <div class="col-md-12 thumbnail-content creature-content show" id="creature-content">
+                            <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt="" class="thumbnail-img"></a>
+                            <p class="lead text-left"><strong>Description: </strong>This project was the first project I did at Eleven Fifty Academy. We were instructed to create a creature using only HTML & CSS. I decided to create Jack-o-lanterns that light up when you hover over them and add some motion to them to add more complexity</p>
+                            <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><i class="download fab fa-codepen fa-3x grow"></i></a>
+                        </div>
+                        <div class="col-md-12 thumbnail-content static-content" id="static-content">
+                            <a href="https://nsnyder1992.github.io/static_layout/" target="blank" class="download"><img src="assets/img/static_layout.PNG" alt="" class="thumbnail-img"></a>
+                            <p class="lead text-left"><strong>Description: </strong>The second project done at Eleven Fifty Academy. I was tasked with recreating a static website from a provided list. I choose <a href="https://www.kastapp.co/" class="download">kastapp.co</a>. I used HTML, CSS & a small amount of JS.</p>
+                            <a href="https://github.com/nsnyder1992/static_layout" target="blank" class="download"><i class="fab fa-github fa-3x grow"></i></a>
+                        </div>
+                        <div class="col-md-12 thumbnail-content game-content" id="game-content">
+                            <a href="https://nsnyder1992.github.io/rpg-mini-game/" target="blank" class="download" target="blank"><img src="assets/img/rpg.PNG" alt="" class="thumbnail-img"></a>
+                            <p class="lead text-left"><strong>Description:</strong> I decided to make a mini-game to enhance my javascript understanding. I used a framework called <a href="https://phaser.io/" class="download">phaser.io</a>. This made the task a lot easier and I learn to use MVC to divide up my code so it was easier to maintain. If you are not on a mobile device, I've actually embedded it into this webpage as and easter egg! Read the about section and you might find it!!!</p>
+                            <a href="https://github.com/nsnyder1992/rpg-mini-game" target="blank" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
+                        </div>
+                        <!-- <div class="col-md-12 thumbnail-content api-content" id="api-content">
+                            <a href="#" class="download" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt=""
+                                    class="thumbnail-img"></a>
+                            <p class="lead text-left"><strong>Description: Place Holder</strong></p>
+                            <a href="#" class="download" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="container footer">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <a href="https://github.com/nsnyder1992" target="blank"><i class="fab fa-github fa-3x grow"></i></a>
+                <a href="https://www.linkedin.com/in/nick-snyder-47238a139/" target="blank"><i class="fab fa-linkedin-in fa-3x grow"></i></a>
+                <a href="https://codepen.io/sicknick92" target="blank"><i class="fab fa-codepen fa-3x grow"></i></a>
+                <a href="assets/docs/nick_snyder_resume.pdf" download="nick_snyder_resume.pdf"><i class="fas fa-file fa-3x grow"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 <!-- JQUERY -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
