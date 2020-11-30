@@ -1,6 +1,6 @@
 $(document).ready(function () {
   //Open about dropdown close others
-  $("#game-start").click(() => {
+  $("#start-game").click(() => {
     $(".history").removeClass("show");
     $(".game").addClass("show");
   });
@@ -55,7 +55,7 @@ $(document).ready(function () {
       navigator.userAgent
     )
   ) {
-    $("#start-game").addClass("show");
+    $(".start-game").addClass("show");
   }
 
   //Functions
