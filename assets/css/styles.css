@@ -118,9 +118,11 @@ h1,
   display: none;
 }
 
+.start-game,
 .game {
   display: none;
 }
+
 .start-game:hover {
   /* text-decoration: underline; */
   color: orange;

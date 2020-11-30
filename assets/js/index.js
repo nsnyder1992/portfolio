@@ -49,6 +49,15 @@ $(document).ready(function () {
     $("#contactModal").modal("toggle");
   });
 
+  //detect if using mobile device and if not allow user to play game
+  if (
+    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    $("#start-game").addClass("show");
+  }
+
   //Functions
   let thumbnailSelect = (thumbnail, content) => {
     $(".thumbnail").each(function () {
