@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  //Open about dropdown close others
+  //toggle between game and about pane
   $("#start-game").click(() => {
     $(".history").removeClass("show");
     $(".game").addClass("show");

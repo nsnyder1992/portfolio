@@ -118,8 +118,11 @@ h1,
   display: none;
 }
 
-.start-game,
 .game {
+  display: none;
+}
+
+.start-game {
   display: none;
 }
 
