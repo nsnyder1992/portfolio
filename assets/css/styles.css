@@ -37,6 +37,14 @@ body,
   border: 1px solid rgba(116, 41, 116, 1);
 }
 
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: rgba(116, 41, 116, 1);
+  border: 1px solid rgba(116, 41, 116, 1);
+  box-shadow: none;
+}
 /* ---------------------------------------------------------- */
 /*Animations*/
 /* ---------------------------------------------------------- */

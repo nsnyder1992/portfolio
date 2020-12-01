@@ -44,7 +44,7 @@
     <div class="jumbotron light-theme snowfall">
         <div id="snow"></div>
         <div id="snow2"></div>
-        <div id="snow3"></div>      
+        <div id="snow3"></div>     
         <div class="container header-container">
             <div class="row text-center">
                 <div class="col-md-12">
@@ -83,7 +83,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="https://formspree.io/f/mvovbgny" method="POST" class="text-center">
+                    <form action="https://formspree.io/f/mvovbgny" method="POST">
                         <div class="form-group">
                             <div class="container-fluid">
                                 <div class="form-element row">
@@ -92,8 +92,8 @@
                                         aria-describedby="contactMe" name="_replyto">
                                 </div>
                                 <div class="form-element row">
-                                    <label for="email" class="col-sm-3">Subject:</label>
-                                    <input type="email" class="form-control  col-sm-9" id='email'
+                                    <label for="subject" class="col-sm-3">Subject:</label>
+                                    <input type="text" class="form-control  col-sm-9" id='subject'
                                         aria-describedby="contactMe" name="subject">
                                 </div>
                                 <div class="form-element row">
@@ -103,11 +103,11 @@
     
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary form-button">Send</button>
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary form-button">Send</button>
                 </div>
             </div>
         </div>
