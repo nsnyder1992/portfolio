@@ -252,6 +252,12 @@ h1,
   background-color: rgb(36, 45, 66);
 }
 
+#divider2 {
+  border: none;
+  height: 1px;
+  background-color: rgb(177, 177, 177);
+}
+
 .download {
   color: rgba(116, 41, 116, 1);
 }
