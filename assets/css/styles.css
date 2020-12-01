@@ -224,7 +224,7 @@ h1,
 }
 
 .thumbnail {
-  width: 15em;
+  width: 12em;
   margin-top: 5px;
   border-radius: 5px;
   background-color: rgb(120, 133, 161);
@@ -236,11 +236,11 @@ h1,
 }
 
 .thumbnail h5 {
-  padding: 0.5em 0px;
+  padding: 0.25em 0px;
 }
 
 .thumbnail i {
-  padding: 0px 0px 0.5em;
+  padding: 0px 0px 0.25em;
   color: white;
 }
 
