@@ -226,6 +226,8 @@ h1,
 .thumbnail {
   width: 11em;
   margin-top: 5px;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
   border-radius: 5px;
   background-color: rgb(120, 133, 161);
   cursor: pointer;
