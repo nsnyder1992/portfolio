@@ -26,10 +26,6 @@ body,
   background-color: rgb(226, 232, 245);
 }
 
-.text-white {
-  color: rgba(255, 233, 190, 1);
-}
-
 .btn-primary {
   background-color: rgba(134, 67, 134, 1);
   border: 1px solid rgba(134, 67, 134, 1);
@@ -41,7 +37,10 @@ body,
   border: 1px solid rgba(116, 41, 116, 1);
 }
 
+/* ---------------------------------------------------------- */
 /*Animations*/
+/* ---------------------------------------------------------- */
+
 .grow {
   transition: all 0.2s ease-in-out;
 }
@@ -141,7 +140,7 @@ h1,
 }
 
 .technologies i {
-  color: rgb(36, 45, 66);
+  color: rgb(193, 198, 209);
   cursor: pointer;
   margin-bottom: 50px;
 }
