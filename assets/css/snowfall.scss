@@ -1,20 +1,42 @@
 // n is number of stars required
-@function multiple-box-shadow($n) {
-  $value: "#{random(4000)}px #{random(4000)}px #FFF";
+@function multiple-box-shadow($n, $width) {
+  $value: "#{random($width)}px #{random($width)}px #FFF";
   @for $i from 2 through $n {
-    $value: "#{$value} , #{random(4000)}px #{random(4000)}px #FFF";
+    $value: "#{$value} , #{random($width)}px #{random($width)}px #FFF";
   }
   @return unquote($value);
 }
 
-$shadows-small: multiple-box-shadow(4000);
-$shadows-medium: multiple-box-shadow(2000);
-$shadows-big: multiple-box-shadow(1000);
+$width: 720;
+$layout-breakpoint-small: 720px;
+$layout-breakpoint-medium: 1000px;
+$layout-breakpoint-large: 1500px;
+$layout-breakpoint-xlg: 3000px;
+
+@media (min-width: $layout-breakpoint-small) {
+  $width: 1000 !global;
+}
+
+@media (min-width: $layout-breakpoint-medium) {
+  $width: 1500 !global;
+}
+
+@media (min-width: $layout-breakpoint-large) {
+  $width: 3000 !global;
+}
+
+@media (min-width: $layout-breakpoint-xlg) {
+  $width: 5000 !global;
+}
+
+$shadows-small: multiple-box-shadow(floor($width * (2/3)), $width);
+$shadows-medium: multiple-box-shadow(floor($width * (1/3)), $width);
+$shadows-big: multiple-box-shadow(floor($width * (1/6)), $width);
 
 .snowfall {
   width: 100%;
   height: 100%;
-  background: radial-gradient(ellipse at top, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at top, #2c3f55 0%, #181b27 100%);
   overflow: hidden;
 }
 
