@@ -71,9 +71,15 @@ h1,
   display: inline-block;
 }
 
-.scrollable .thumbnail {
+.scrollable-thumbnails .thumbnail {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.scrollable-thumbnails {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 @media only screen and (min-width: 721px) {
