@@ -140,7 +140,7 @@ h1,
 }
 
 .technologies i {
-  color: rgb(193, 198, 209);
+  color: white;
   cursor: pointer;
   margin-bottom: 50px;
 }
@@ -178,7 +178,6 @@ h1,
 }
 
 .start-game:hover {
-  /* text-decoration: underline; */
   color: orange;
   cursor: pointer;
 }
