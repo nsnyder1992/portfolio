@@ -175,6 +175,7 @@ h1,
 
 .about-container {
   max-width: 1550px;
+  padding-top: 25px;
 }
 
 .side-nav span:hover {
@@ -219,6 +220,7 @@ h1,
 
 .projects-container {
   max-width: 1550px;
+  padding-top: 25px;
 }
 
 .thumbnail {
