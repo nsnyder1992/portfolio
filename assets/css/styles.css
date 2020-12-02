@@ -185,9 +185,8 @@ h1,
   cursor: pointer;
 }
 
-.selected {
-  background-color: rgba(134, 67, 134, 1);
-  border-radius: 0px 10px 10px 0px;
+#headshot {
+  border-radius: 15px;
 }
 
 .history {
