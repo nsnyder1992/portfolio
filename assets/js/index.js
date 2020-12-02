@@ -56,6 +56,8 @@ $(document).ready(function () {
     )
   ) {
     $(".start-game").addClass("show");
+  } else {
+    $(".game").remove();
   }
 
   //Functions
