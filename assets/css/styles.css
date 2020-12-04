@@ -353,6 +353,15 @@ h1,
   opacity: 1;
 }
 
+.black-spotify {
+  position: relative;
+  left: calc(50% - 87px); /*Center icon*/
+  background-color: #010101;
+  width: 175px;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
 /* ---------------------------------------------------------- */
 /* Contact */
 /* ---------------------------------------------------------- */
