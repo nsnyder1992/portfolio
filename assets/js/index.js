@@ -85,8 +85,8 @@ $(document).ready(function () {
 
   // Open last selected thumbnail
   const getSelectedThumbnail = () => {
-    let thumbnail = localStorage.getItem("selected-thumbnail") || 0;
-    let content = localStorage.getItem("thumbnail-content") || 0;
+    let thumbnail = localStorage.getItem("selected-thumbnail") || false;
+    let content = localStorage.getItem("thumbnail-content") || false;
 
     if (thumbnail && content) thumbnailSelect(thumbnail, content);
   };
