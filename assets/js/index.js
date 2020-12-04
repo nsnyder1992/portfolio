@@ -110,4 +110,39 @@ $(document).ready(function () {
   };
 
   window.addEventListener("load", getSelectedThumbnail);
+
+  //=============================================
+  //Auto-Scroll logic on load
+  //=============================================
+  // Save Y Offset Position to localStorage
+  const recordVerticalOffset = () => {
+    localStorage.setItem("pageVerticalPosition", window.scrollY);
+  };
+
+  // Only save window position after scrolling stops
+  const throttleScroll = (recordVerticalOffset, delay) => {
+    let time = Date.now();
+
+    return () => {
+      if (time + delay - Date.now() < 0) {
+        recordVerticalOffset();
+        time = Date.now();
+      }
+    };
+  };
+
+  // Scroll Event Listener
+  window.addEventListener("scroll", throttleScroll(recordVerticalOffset, 1000));
+
+  // DESTINATION PAGE
+  // ================
+
+  const repositionPage = () => {
+    let pageVerticalPosition =
+      localStorage.getItem("pageVerticalPosition") || 0;
+
+    window.scrollTo(0, pageVerticalPosition);
+  };
+
+  window.addEventListener("load", repositionPage);
 });
