@@ -89,6 +89,17 @@ h1,
   display: inline-block;
 }
 
+.scrollable-artists {
+  background-color: transparent;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.scrollable-artists .artist-content {
+  display: inline-block;
+  margin: 10px 2px;
+}
+
 .scrollable-thumbnails .thumbnail {
   display: inline-block;
   margin-bottom: 10px;
@@ -303,6 +314,43 @@ h1,
   cursor: pointer;
   border-radius: 5px;
   margin: 0px 0px 25px;
+}
+
+/* Spotify insert */
+.spotify-content {
+  margin: 10px 0px;
+}
+
+.artist-content {
+  margin: 2px 2px;
+}
+
+.artist-image {
+  width: 160px;
+  border-radius: 5px;
+
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.artist-name {
+  position: relative;
+  top: -150px;
+  background: transparent;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.artist-content:hover .artist-image {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.artist-content:hover .artist-name {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* ---------------------------------------------------------- */
