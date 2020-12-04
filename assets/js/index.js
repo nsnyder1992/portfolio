@@ -67,7 +67,7 @@ $(document).ready(function () {
     $(".thumbnail").each(function () {
       if ($(this)[0].id === thumbnail[0].id) {
         $(this).addClass("selected");
-        localStorage.setItem("selected-thumbnail", thumbnail);
+        localStorage.setItem("selected-thumbnail", $(this)[0].id);
       } else {
         $(this).removeClass("selected");
       }
@@ -76,7 +76,25 @@ $(document).ready(function () {
     $(".thumbnail-content").each(function () {
       if ($(this)[0].id === content[0].id) {
         $(this).addClass("show");
-        localStorage.setItem("thumbnail-content", content);
+        localStorage.setItem("thumbnail-content", $(this)[0].id);
+      } else {
+        $(this).removeClass("show");
+      }
+    });
+  };
+
+  const loadLastThumbnail = (thumbnail, content) => {
+    $(".thumbnail").each(function () {
+      if ($(this)[0].id === thumbnail) {
+        $(this).addClass("selected");
+      } else {
+        $(this).removeClass("selected");
+      }
+    });
+
+    $(".thumbnail-content").each(function () {
+      if ($(this)[0].id === content) {
+        $(this).addClass("show");
       } else {
         $(this).removeClass("show");
       }
@@ -88,7 +106,7 @@ $(document).ready(function () {
     let thumbnail = localStorage.getItem("selected-thumbnail") || false;
     let content = localStorage.getItem("thumbnail-content") || false;
 
-    if (thumbnail && content) thumbnailSelect(thumbnail, content);
+    if (thumbnail && content) loadLastThumbnail(thumbnail, content);
   };
 
   window.addEventListener("load", getSelectedThumbnail);
