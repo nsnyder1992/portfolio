@@ -5,7 +5,7 @@ $(document).ready(function () {
   //spotify constants
   const authEndpoint = "https://accounts.spotify.com/authorize";
   const clientId = "60c69366ae1e45d1adbfb0614a57e993";
-  const redirectUri = "https://nsnyder1992.github.io/spotifyApi/";
+  const redirectUri = "https://nsnyder1992.github.io/portfolio/";
   const scopes = ["user-top-read"];
 
   // Get the hash of the url
