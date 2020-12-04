@@ -60,11 +60,14 @@ $(document).ready(function () {
     $(".game").remove();
   }
 
-  //Functions
-  let thumbnailSelect = (thumbnail, content) => {
+  //=============================================
+  //Thumbnail logic
+  //=============================================
+  const thumbnailSelect = (thumbnail, content) => {
     $(".thumbnail").each(function () {
       if ($(this)[0].id === thumbnail[0].id) {
         $(this).addClass("selected");
+        localStorage.setItem("selected-thumbnail", thumbnail);
       } else {
         $(this).removeClass("selected");
       }
@@ -73,9 +76,20 @@ $(document).ready(function () {
     $(".thumbnail-content").each(function () {
       if ($(this)[0].id === content[0].id) {
         $(this).addClass("show");
+        localStorage.setItem("thumbnail-content", content);
       } else {
         $(this).removeClass("show");
       }
     });
   };
+
+  // Open last selected thumbnail
+  const getSelectedThumbnail() {
+    let thumbnail = localStorage.getItem('selected-thumbnail') || 0;
+    let content = localStorage.getItem('thumbnail-content') || 0;
+
+    if (thumbnail && content) thumbnailSelect(thumbnail, content);
+  }
+  
+  window.addEventListener("load", getSelectedThumbnail);
 });
