@@ -20,6 +20,8 @@ $(document).ready(function () {
       thumbnailSelect($("#static-thumbnail"), $("#static-content"));
     } else if (e.target.id == "js") {
       thumbnailSelect($("#game-thumbnail"), $("#game-content"));
+    } else if (e.target.id == "database") {
+      thumbnailSelect($("#fuji-thumbnail"), $("#fuji-content"));
     }
   });
 
