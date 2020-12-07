@@ -146,5 +146,5 @@ $(document).ready(function () {
     window.scrollTo(0, pageVerticalPosition);
   };
 
-  //window.addEventListener("load", repositionPage);
+  window.addEventListener("load", repositionPage);
 });
