@@ -5,7 +5,7 @@ $(document).ready(function () {
   //spotify constants
   const authEndpoint = "https://accounts.spotify.com/authorize";
   const clientId = "60c69366ae1e45d1adbfb0614a57e993";
-  const redirectUri = "https://nsnyder1992.github.io/portfolio/";
+  const redirectUri = "https://nsnyder1992.github.io/portfolio#projects/";
   const scopes = ["user-top-read"];
 
   // Get the hash of the url
@@ -26,11 +26,6 @@ $(document).ready(function () {
 
   //variables
   let artists = [];
-
-  //set button text
-  !_token
-    ? (spotifyApi.innerText = "Authorize")
-    : (spotifyApi.innerText = "Try it out!");
 
   //click functions
   spotifyApi.click(() => getSpotifyData());
