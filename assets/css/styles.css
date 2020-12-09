@@ -282,7 +282,13 @@ h1,
 }
 
 .screenshots {
-  width: 350px;
+  min-width: 350px;
+  margin: 10px 10px;
+}
+
+.screenshots-lg {
+  margin: 10px 10px;
+  width: 100%;
 }
 
 .thumbnail-content {
@@ -296,11 +302,6 @@ h1,
   cursor: pointer;
   border-radius: 5px;
   margin: 0px 0px 25px;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-  color: black;
 }
 
 /* Spotify insert */

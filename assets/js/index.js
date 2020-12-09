@@ -66,6 +66,12 @@ $(document).ready(function () {
     $(".game").remove();
   }
 
+  //Carousel delay
+
+  $("#deviceCarousel").carousel({
+    interval: 10000,
+  });
+
   //=============================================
   //Thumbnail logic
   //=============================================
