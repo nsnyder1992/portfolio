@@ -285,27 +285,8 @@ h1,
   width: 350px;
 }
 
-.fuji-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.creature-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.static-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.api-content {
-  display: none;
-  margin-top: 25px;
-}
-
-.game-content {
+.thumbnail-content {
+  transition: transform 2s ease-in;
   display: none;
   margin-top: 25px;
 }
@@ -315,6 +296,11 @@ h1,
   cursor: pointer;
   border-radius: 5px;
   margin: 0px 0px 25px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  color: black;
 }
 
 /* Spotify insert */
@@ -399,5 +385,6 @@ h1,
 }
 
 .hide {
+  transition: ease-out;
   display: none;
 }

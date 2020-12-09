@@ -42,6 +42,10 @@ $(document).ready(function () {
     thumbnailSelect($("#api-thumbnail"), $("#api-content"));
   });
 
+  $(".device-thumbnail").click(() => {
+    thumbnailSelect($("#device-thumbnail"), $("#device-content"));
+  });
+
   $(".game-thumbnail").click(() => {
     thumbnailSelect($("#game-thumbnail"), $("#game-content"));
   });
