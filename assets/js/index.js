@@ -46,6 +46,10 @@ $(document).ready(function () {
     thumbnailSelect($("#device-thumbnail"), $("#device-content"));
   });
 
+  $(".serverless-thumbnail").click(() => {
+    thumbnailSelect($("#serverless-thumbnail"), $("#serverless-content"));
+  });
+
   $(".game-thumbnail").click(() => {
     thumbnailSelect($("#game-thumbnail"), $("#game-content"));
   });
