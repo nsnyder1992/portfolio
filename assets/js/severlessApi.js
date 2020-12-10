@@ -58,7 +58,7 @@ $(document).ready(() => {
         span.className = "sensor-value";
 
         para.innerText = sensor.sensor;
-        pTime.innerText = "Timestamp: Today " + formateDate(devTime);
+        pTime.innerText = "Timestamp: Today " + formatDate(devTime);
         span.innerText = sensor.value;
 
         sensorContent.appendChild(para);
