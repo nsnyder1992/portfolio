@@ -11,6 +11,7 @@ $(document).ready(() => {
       .then((res) => res.json())
       .then((json) => {
         json = JSON.stringify(json);
+        console.log("json", json);
         displayDevices(json);
         localStorage.setItem("time", Date.now());
       })
