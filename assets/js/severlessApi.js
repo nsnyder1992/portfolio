@@ -11,7 +11,6 @@ $(document).ready(() => {
       .then((res) => res.json())
       .then((json) => {
         json = JSON.stringify(json);
-        console.log("json", json);
         displayDevices(json);
         localStorage.setItem("time", Date.now());
       })
@@ -20,7 +19,6 @@ $(document).ready(() => {
 
   function displayDevices(devices) {
     localStorage.setItem("devices", devices);
-    console.log(localStorage.getItem("devices"));
 
     if (!(devices instanceof Object)) devices = JSON.parse(devices);
 
@@ -60,7 +58,7 @@ $(document).ready(() => {
         span.className = "sensor-value";
 
         para.innerText = sensor.sensor;
-        pTime.innerText = devTime;
+        pTime.innerText = "Timestamp: Today " + formateDate(devTime);
         span.innerText = sensor.value;
 
         sensorContent.appendChild(para);
@@ -71,6 +69,20 @@ $(document).ready(() => {
 
       devInsert.appendChild(deviceContent);
     });
+  }
+
+  function formatDate(date) {
+    let date = new Date(date);
+    let hour =
+      date.getHours() > 12
+        ? date.getHours() - 12
+        : date.getHours() == 0
+        ? 12
+        : date.getHours();
+    let min = date.getMinutes() == 0 ? "00" : date.getMinutes();
+    let sec = date.getSeconds() == 0 ? "00" : date.getSeconds();
+
+    return hour + ":" + min + ":" + sec;
   }
 
   let timeOut = 600000;
