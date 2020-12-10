@@ -363,12 +363,13 @@ h1,
   width: 18rem;
 }
 
-.device-data a {
+#device-insert {
+  color: #010101;
   text-decoration: none;
 }
 
-.device-data a:hover {
-  color: black;
+#device-insert:hover {
+  color: #010101;
 }
 
 .device-data h1 {
