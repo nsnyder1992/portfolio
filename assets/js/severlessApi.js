@@ -10,6 +10,7 @@ $(document).ready(() => {
     await fetch(corsProxy + baseUrl + lastUpdate)
       .then((res) => res.json())
       .then((json) => {
+        json = JSON.stringify(json);
         displayDevices(json);
         localStorage.setItem("time", Date.now());
       })
