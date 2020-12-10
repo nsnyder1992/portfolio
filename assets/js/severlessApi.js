@@ -17,7 +17,7 @@ $(document).ready(() => {
   };
 
   function displayDevices(devices) {
-    localStorage.setItem("devices", JSON.stringify(devices));
+    localStorage.setItem("devices", devices);
     console.log(localStorage.getItem("devices"));
 
     if (!(devices instanceof Object)) devices = JSON.parse(devices);
