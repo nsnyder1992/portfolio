@@ -55,7 +55,7 @@ $(document).ready(() => {
 
         sensorContent.className = "sensor-data list-group-item text-center";
         para.className = "sensor-name lead";
-        pTime.className = "sensor-time";
+        pTime.className = "timestamp";
         span.className = "sensor-value";
 
         para.innerText = sensor.sensor;
@@ -64,6 +64,7 @@ $(document).ready(() => {
 
         sensorContent.appendChild(para);
         sensorContent.appendChild(span);
+        sensorContent.appendChild(pTime);
         card.appendChild(sensorContent);
       });
 
