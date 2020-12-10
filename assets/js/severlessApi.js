@@ -80,7 +80,7 @@ $(document).ready(() => {
         ? 12
         : d.getHours();
     let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
-    let sec = d.getSeconds() < 10 ? "0" + d.getMinutes() : d.getSeconds();
+    let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
 
     return hour + ":" + min + ":" + sec;
   }
