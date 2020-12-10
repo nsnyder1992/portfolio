@@ -81,8 +81,9 @@ $(document).ready(() => {
         : d.getHours();
     let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
     let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+    let am_pm = d.getHours() > 12 ? "pm" : "am";
 
-    return hour + ":" + min + ":" + sec;
+    return hour + ":" + min + ":" + sec + am_pm;
   }
 
   let timeOut = 600000;
