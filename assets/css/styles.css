@@ -363,6 +363,14 @@ h1,
   width: 18rem;
 }
 
+.device-data a {
+  text-decoration: none;
+}
+
+.device-data a:hover {
+  color: black;
+}
+
 .device-data h1 {
   padding: 10px 0px 2px;
   font-weight: bolder;
