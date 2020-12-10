@@ -221,7 +221,7 @@
                                     src="assets/img/static_layout.PNG" alt="" class="thumbnail-img"></a>
                         </div>
                         <div class="col-lg-7 text-center">
-                            <p class="lead text-left"><strong>Description: </strong>The second project done at Eleven Fifty Academy. I was
+                            <p class="lead text-left"><strong>Description: </strong> The second project done at Eleven Fifty Academy. I was
                             tasked with recreating a static website from a provided list. I choose <a href="https://www.kastapp.co/"
                                 class="download">kastapp.co</a>. I used HTML, CSS & a small amount of JS.</p>
                         </div>
@@ -240,7 +240,7 @@
                             <a href="https://codepen.io/sicknick92/pen/QWEJeLq" target="blank"><img src="assets/img/jack-o-lanterns.PNG" alt="" class="thumbnail-img"></a>
                         </div>
                         <div class="col-lg-7 text-center">
-                            <p class="lead text-left"><strong>Description: </strong>This project was the first project I did at Eleven Fifty Academy. We were instructed to create a creature using only HTML & CSS. I decided to create Jack-O-Lanterns that light up when you hover over them and add some motion to them to add more complexity</p>
+                            <p class="lead text-left"><strong>Description: </strong> This project was the first project I did at Eleven Fifty Academy. We were instructed to create a creature using only HTML & CSS. I decided to create Jack-O-Lanterns that light up when you hover over them and add some motion to them to add more complexity</p>
                         </div>
                         <div class="col-lg-12 text-center">
                             <a href="https://codepen.io/sicknick92/pen/QWEJeLq" class="github-link" target="blank"><i class="github-link fab fa-codepen fa-3x grow"></i></a>
@@ -251,7 +251,7 @@
                 <!-- Parameter Extractor content -->
                 <div class="col-md-12 thumbnail-content fuji-content text-center" id="fuji-content">
                     <h2>Parameter Extractor</h2>
-                    <p class="lead text-left"><strong>Description: </strong>I was asked to develop software to connect to a PLC (Programable Logic Controller) to       download/upload parameters, of the current program recipe. Using python, wxpython, and a Ethernet/IP (a common server/client Industrial Communication protocol) python library, I was able to accomplish this task. I setup a database, so that admins could login and add/remove certain parameters or even UDTs (User Defined Tags). They are sort of like <u>struct</u> in C, or a user defined datatype that contains variables of base datatypes, int, dint, etc., that are defined in a specific layout. I also made a feature for field-service engineers (FSEs) to be able to import/export parameters to CSV format. This came in handy when a operator would mess with the recipe and couldn't get it to work again. All the FSEhad to do was load the last working recipe!</p>
+                    <p class="lead text-left"><strong>Description: </strong> I was asked to develop software to connect to a PLC (Programable Logic Controller) to       download/upload parameters, of the current program recipe. Using python, wxpython, and a Ethernet/IP (a common server/client Industrial Communication protocol) python library, I was able to accomplish this task. I setup a database, so that admins could login and add/remove certain parameters or even UDTs (User Defined Tags). They are sort of like <u>struct</u> in C, or a user defined datatype that contains variables of base datatypes, int, dint, etc., that are defined in a specific layout. I also made a feature for field-service engineers (FSEs) to be able to import/export parameters to CSV format. This came in handy when a operator would mess with the recipe and couldn't get it to work again. All the FSEhad to do was load the last working recipe!</p>
                     <p class="lead text-left">This project is owned by Fuji Seal and is proprietary software and can not be
                         made public, but below are some screenshots</p>
                     <div class="text-center">
@@ -275,7 +275,7 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <p class="lead text-left"><strong>Description:</strong>This looks up the top 5 artist you listen
+                            <p class="lead text-left"><strong>Description:</strong> This looks up the top 5 artist you listen
                                 to and displays them on this page! And if you click on them it will take you to there spotify page.</p>
                             <div class="col text-center">
                                 <span class="btn btn-lg btn-primary" href="" role="button" id="spotify">Try it out!</span>
@@ -293,7 +293,7 @@
                 <div class="col-md-12 thumbnail-content device-content text-center" id="device-content">
                         <h2>Azure IoT Device</h2>
                         <div class="lead text-left">
-                            <p class="lead text-left"><strong>Description:</strong>This flask application is running on a raspberry pi, and it sends telemetry data to an Azure IoT Hub. I created a custom flask cli command, so that I could use cron to run it every hour. Why flask? Well I plan on using flask to create a small webserver so that I can view my data locally. Also it is easy to hide and save my environment variables with dotenv library. So, why not just start with a flask application!</p>
+                            <p class="lead text-left"><strong>Description:</strong> This flask application is running on a raspberry pi, and it sends telemetry data to an Azure IoT Hub. I created a custom flask cli command, so that I could use cron to run it every 10 minutes. Why flask? Well I plan on using flask to create a small webserver so that I can view my data locally. Also it is easy to hide and save my environment variables with dotenv library. So, why not just start with a flask application!</p>
                             <div class="text-center" style="margin-bottom: 20px;">
                                 <img src="assets/img/rpi-iot-terminal.PNG" alt="" class="col-md-5 img-fluid screenshots-lg">
                                 <img src="assets/img/azure-terminal.PNG" alt="" class="col-md-5 img-fluid screenshots-lg">
@@ -313,12 +313,11 @@
                         <h2 class="col-lg-12 text-center">Serverless Azure IoT App</h2>
                         <div class="col-lg-5 text-center"><a href="https://nsnyder1992.github.io/iot-serverless-app/" target="blank" id="device-insert"></a></div>
                         <div class="col-lg-7">
-                            <p class="lead text-left"><strong>Description:</strong>Using Azure's cloud platform, I created this
+                            <p class="lead text-left"><strong>Description:</strong> Using Azure's cloud platform, I created this
                                 application by routing the messages sent from my IoT Device project's IoT Hub to a Function App. The function app then
                                 logs the message in a NoSQL DB. And then when this page loads it sends a request to the Function app and
                                 gets the last update. Now please keep in mind, in order to keep the cost down for the iot hub and function app, I
-                                only update this information every hour. And requests to the
-                                Function App can only be made every 10min. You can check the code out on my github. Click the github icon
+                                only update this information every 10 minutes. You can check the code out on my github. Click the github icon
                                 below.
                             </p>
                             <div id="spotify-insert"></div>
