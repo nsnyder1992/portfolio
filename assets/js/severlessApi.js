@@ -79,8 +79,8 @@ $(document).ready(() => {
         : d.getHours() == 0
         ? 12
         : d.getHours();
-    let min = d.getMinutes() == 0 ? "00" : d.getMinutes();
-    let sec = d.getSeconds() == 0 ? "00" : d.getSeconds();
+    let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+    let sec = d.getSeconds() < 10 ? "0" + d.getMinutes() : d.getSeconds();
 
     return hour + ":" + min + ":" + sec;
   }
