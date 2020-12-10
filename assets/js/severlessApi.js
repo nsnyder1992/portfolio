@@ -72,15 +72,15 @@ $(document).ready(() => {
   }
 
   function formatDate(date) {
-    let date = new Date(date);
+    let d = new Date(date);
     let hour =
-      date.getHours() > 12
-        ? date.getHours() - 12
-        : date.getHours() == 0
+      d.getHours() > 12
+        ? d.getHours() - 12
+        : d.getHours() == 0
         ? 12
-        : date.getHours();
-    let min = date.getMinutes() == 0 ? "00" : date.getMinutes();
-    let sec = date.getSeconds() == 0 ? "00" : date.getSeconds();
+        : d.getHours();
+    let min = d.getMinutes() == 0 ? "00" : d.getMinutes();
+    let sec = d.getSeconds() == 0 ? "00" : d.getSeconds();
 
     return hour + ":" + min + ":" + sec;
   }
