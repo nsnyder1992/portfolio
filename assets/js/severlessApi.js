@@ -113,8 +113,7 @@ $(document).ready(() => {
   //date refresh and multiple of 10min refresh
   let date = new Date();
   let storageDate = Date(localStorage.getItem("date")) || new Date();
-  let dateRefresh =
-    date.getMinutes() > storageDate && date.getMinutes() % 10 === 0;
+  let dateRefresh = date > storageDate && date.getMinutes() % 10 === 0;
 
   //get local storage of devices
   let devices = localStorage.getItem("devices") || "";
