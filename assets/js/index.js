@@ -1,15 +1,4 @@
 $(document).ready(function () {
-  //toggle between game and about pane
-  $("#start-game").click(() => {
-    $(".history").removeClass("show");
-    $(".game").addClass("show");
-  });
-
-  $("#go-back").click(() => {
-    $(".history").addClass("show");
-    $(".game").removeClass("show");
-  });
-
   //scroll to certain technology specific project
   $(".nav-icon").click((e) => {
     if (e.target.id == "python") {
@@ -58,17 +47,6 @@ $(document).ready(function () {
   $(".contact-me").click(() => {
     $("#contactModal").modal("toggle");
   });
-
-  //detect if using mobile device and if not allow user to play game
-  if (
-    !/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-      navigator.userAgent
-    )
-  ) {
-    $(".start-game").addClass("show");
-  } else {
-    $(".game").remove();
-  }
 
   //Carousel delay
 
