@@ -28,6 +28,25 @@ $(document).ready(() => {
 
   //fetch the last sensor data
   let getLastUpdate = async () => {
+    //remove children
+    cloud.remove();
+    while (devInsert.firstChild) {
+      devInsert.removeChild(devInsert.firstChild);
+    }
+
+    //loading
+    const loading = document.createElement("div");
+    const srOnly = document.createElement("span");
+    loading.className = "spinner-border text-secondary";
+    loading.role = "status";
+    loading.id = "azure-loading";
+    srOnly.className = "sr-only";
+    srOnly.innerText = "Loading...";
+
+    loading.appendChild(srOnly);
+    devInsert.appendChild(loading);
+
+    //fetch
     await fetch(corsProxy + baseUrl + lastUpdate)
       .then((res) => res.json())
       .then((json) => {
@@ -35,7 +54,15 @@ $(document).ready(() => {
         displayDevices(json);
         localStorage.setItem("time", Date.now());
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+
+        //on fail clean up loading and append cloud
+        while (devInsert.firstChild) {
+          devInsert.removeChild(devInsert.firstChild);
+        }
+        $("device-insert").appendChild(cloud);
+      });
   };
 
   //display devices
@@ -45,7 +72,6 @@ $(document).ready(() => {
     while (devInsert.firstChild) {
       devInsert.removeChild(devInsert.firstChild);
     }
-
     //set devices
     localStorage.setItem("devices", devices);
 
@@ -134,35 +160,47 @@ $(document).ready(() => {
     canRefresh = localStorage.getItem("refresh") === "true";
 
     //date refresh and multiple of 10min refresh
-    date = new Date();
     storageDate = new Date(localStorage.getItem("date")) || new Date();
+    date = new Date();
     let dateRefresh = date >= storageDate;
 
     //if refresh send request if not display local storage
     if (canRefresh || dateRefresh) {
+      //set refresh to false
       localStorage.setItem("refresh", false);
+
+      //format next available refresh date
       date.setMinutes(Math.floor(date.getMinutes() / 10) * 10 + 10);
       date.setSeconds(30);
+
+      //create a string containing next date
       let dateStr = date.toDateString();
       dateStr += " " + formatDate(date, false);
+
+      //store date for later
       localStorage.setItem("date", dateStr);
+
+      //get update
       getLastUpdate();
-      minsLeft = storageDate.getMinutes() - date.getMinutes();
-      minsLeft = minsLeft < 1 ? "<1" : minsLeft;
-      $("#azure-min").text(minsLeft);
+
+      //update next available refresh date
+      $("#azure-min").text(minsLeft());
     } else {
-      minsLeft = storageDate.getMinutes() - date.getMinutes();
-      minsLeft = minsLeft < 1 ? "<1" : minsLeft;
-      $("#azure-min").text(minsLeft);
+      $("#azure-min").text(minsLeft());
     }
   }
 
-  let minsLeft;
+  let minsLeft = () => {
+    let mins = Math.floor((storageDate - date) / 60000);
+    mins = mins < 0 ? "Refresh now!" : mins < 1 ? "<1min" : mins + "mins";
+    return mins;
+  };
+
   //delete cloud on load if devices
   if (devices !== "") {
     displayDevices(devices);
-    minsLeft = storageDate.getMinutes() - date.getMinutes();
-    minsLeft = minsLeft < 1 ? "<1" : minsLeft;
-    $("#azure-min").text(minsLeft);
+    $("#azure-min").text(minsLeft());
+  } else {
+    $("#azure-min").text(minsLeft());
   }
 });
