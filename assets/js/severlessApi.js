@@ -108,7 +108,7 @@ $(document).ready(() => {
   let time = parseInt(localStorage.getItem("time")) || 0;
 
   //first visit refresh
-  let canRefresh = parseInt(localStorage.getItem("refresh")) || true;
+  let canRefresh = localStorage.getItem("refresh") === "true" || true;
 
   //date refresh and multiple of 10min refresh
   let date = new Date();
@@ -119,7 +119,7 @@ $(document).ready(() => {
   let devices = localStorage.getItem("devices") || "";
 
   //if refresh send request if not display local storage
-  if (Date.now() - time > timeOut || canRefresh == "true" || dateRefresh) {
+  if (Date.now() - time > timeOut || canRefresh || dateRefresh) {
     getLastUpdate();
     localStorage.setItem("refresh", false);
     localStorage.setItem("date", date);
