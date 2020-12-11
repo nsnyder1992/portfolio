@@ -137,14 +137,17 @@ function displayDevices(devices) {
 }
 
 //format timestamp on sensor data
-function formatDate(date, timeOfDay = true) {
+function formatDate(date, timeOfDay = true, twelveHour = true) {
   let d = new Date(date);
-  let hour =
-    d.getHours() > 12
-      ? d.getHours() - 12
-      : d.getHours() == 0
-      ? 12
-      : d.getHours();
+  if (twelveHour) {
+    let hour =
+      d.getHours() > 12
+        ? d.getHours() - 12
+        : d.getHours() == 0
+        ? 12
+        : d.getHours();
+  }
+
   hour = hour < 10 ? "0" + hour : hour;
   let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
   let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
@@ -174,7 +177,7 @@ function checkRefresh() {
 
     //create a string containing next date
     let dateStr = date.toDateString();
-    dateStr += " " + formatDate(date, false);
+    dateStr += " " + formatDate(date, false, false);
 
     //store date for later
     localStorage.setItem("date", dateStr);
