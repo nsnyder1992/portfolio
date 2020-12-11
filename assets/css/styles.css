@@ -197,8 +197,38 @@ h1,
   cursor: pointer;
 }
 
+.headshot-container {
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
 #headshot {
   border-radius: 15px;
+}
+
+.headshot-container a {
+  text-decoration: none;
+}
+
+.brains-tag {
+  position: relative;
+  top: 380px;
+  background: transparent;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 100;
+
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.headshot-container:hover #headshot {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.headshot-container:hover .brains-tag {
+  visibility: visible;
+  opacity: 1;
 }
 
 .history {
