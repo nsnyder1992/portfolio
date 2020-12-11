@@ -50,8 +50,8 @@ let getLastUpdate = async () => {
     .then((res) => res.json())
     .then((json) => {
       json = JSON.stringify(json);
+      $("#azure-min").text(minsLeft());
       displayDevices(json);
-      localStorage.setItem("time", Date.now());
     })
     .catch((err) => {
       console.log(err);
