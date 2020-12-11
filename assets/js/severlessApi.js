@@ -139,7 +139,7 @@ function displayDevices(devices) {
 //format timestamp on sensor data
 function formatDate(date, timeOfDay = true, twelveHour = true) {
   let d = new Date(date);
-  let hour;
+  let hour = d.getHours();
   if (twelveHour) {
     hour =
       d.getHours() > 12
