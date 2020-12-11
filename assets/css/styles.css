@@ -386,6 +386,16 @@ h1,
   font-size: xx-large;
 }
 
+#azure-alert {
+  position: fixed;
+  width: 250px;
+  top: calc(50% - 10px);
+  left: calc(50% - 125px);
+  opacity: 1;
+  color: #000;
+  /* background-color: aquamarine; */
+}
+
 /* ---------------------------------------------------------- */
 /* Contact */
 /* ---------------------------------------------------------- */

@@ -3,10 +3,33 @@ $(document).ready(() => {
   const corsProxy = "https://cors-anywhere.herokuapp.com/";
   const baseUrl =
     "https://iot-portfolio-app.azurewebsites.net/api/HttpTrigger1?code=l72Ca3JksC7iCbCGzIgDIAVLbHi57D1ub1vp81Hk0T9oXGgJAdwAnw==";
+
+  //api queries
   const lastUpdate = "&lastUpdate=true";
 
   //get insert point into document
   const devInsert = document.getElementById("device-insert");
+  const azureBtn = $("#azure-btn");
+  const cloud = $("#azure-cloud");
+
+  //onClick
+  azureBtn.click(() => checkRefesh());
+
+  //parameters
+  //timeout refresh
+  let timeOut = 600000;
+  let time = parseInt(localStorage.getItem("time")) || 0;
+
+  //first visit refresh
+  let canRefresh = localStorage.getItem("refresh") === "true" || true;
+
+  //date refresh and multiple of 10min refresh
+  let date = new Date();
+  let storageDate = Date(localStorage.getItem("date")) || new Date();
+  let dateRefresh = date > storageDate && date.getMinutes() % 10 === 0;
+
+  //get local storage of devices
+  let devices = localStorage.getItem("devices") || "";
 
   //fetch the last sensor date
   let getLastUpdate = async () => {
@@ -22,6 +45,7 @@ $(document).ready(() => {
 
   //display devices
   function displayDevices(devices) {
+    cloud.remove();
     //set devices
     localStorage.setItem("devices", devices);
 
@@ -103,29 +127,36 @@ $(document).ready(() => {
     return hour + ":" + min + ":" + sec + am_pm;
   }
 
-  //timeout refresh
-  let timeOut = 600000;
-  let time = parseInt(localStorage.getItem("time")) || 0;
+  function checkRefesh() {
+    //parameters
+    //timeout refresh
+    time = parseInt(localStorage.getItem("time"));
 
-  //first visit refresh
-  let canRefresh = localStorage.getItem("refresh") === "true" || true;
+    //first visit refresh
+    canRefresh = localStorage.getItem("refresh") === "true";
 
-  //date refresh and multiple of 10min refresh
-  let date = new Date();
-  let storageDate = Date(localStorage.getItem("date")) || new Date();
-  let dateRefresh = date > storageDate && date.getMinutes() % 10 === 0;
+    //date refresh and multiple of 10min refresh
+    date = new Date();
+    storageDate = Date(localStorage.getItem("date"));
+    dateRefresh = date > storageDate && date.getMinutes() % 10 === 0;
 
-  //get local storage of devices
-  let devices = localStorage.getItem("devices") || "";
+    //if refresh send request if not display local storage
+    if (Date.now() - time > timeOut || canRefresh || dateRefresh) {
+      getLastUpdate();
+      localStorage.setItem("refresh", false);
+      localStorage.setItem("date", date);
+      console.log("fetch");
+    } else {
+      console.log(
+        Math.floor(timeOut / 60000 - (Date.now() - time) / 60000) +
+          " min remaining"
+      );
+    }
+  }
 
-  //if refresh send request if not display local storage
-  if (Date.now() - time > timeOut || canRefresh || dateRefresh) {
-    getLastUpdate();
-    localStorage.setItem("refresh", false);
-    localStorage.setItem("date", date);
-    console.log("fetch");
-  } else {
-    if (devices !== "") displayDevices(devices);
+  //delete cloud on load if devices
+  if (devices !== "") {
+    displayDevices(devices);
     console.log(
       Math.floor(timeOut / 60000 - (Date.now() - time) / 60000) +
         " min remaining"
