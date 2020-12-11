@@ -45,7 +45,12 @@ $(document).ready(() => {
 
   //display devices
   function displayDevices(devices) {
+    //remove children
     cloud.remove();
+    while (devInsert.firstChild) {
+      devInsert.removeChild(devInsert.firstChild);
+    }
+
     //set devices
     localStorage.setItem("devices", devices);
 
