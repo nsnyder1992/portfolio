@@ -119,7 +119,7 @@ $(document).ready(() => {
   let devices = localStorage.getItem("devices") || "";
 
   //if refresh send request if not display local storage
-  if (Date.now() - time > timeOut || canRefresh || dateRefresh) {
+  if (Date.now() - time > timeOut || canRefresh == "true" || dateRefresh) {
     getLastUpdate();
     localStorage.setItem("refresh", false);
     localStorage.setItem("date", date);
