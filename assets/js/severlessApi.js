@@ -124,6 +124,7 @@ $(document).ready(() => {
     getLastUpdate();
     localStorage.setItem("refresh", false);
     localStorage.setItem("date", date);
+    console.log("fetch");
   } else {
     if (devices !== "") displayDevices(devices);
     console.log(
