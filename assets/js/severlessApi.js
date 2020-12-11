@@ -190,10 +190,11 @@ function checkRefresh() {
 }
 
 let minsLeft = () => {
+  //update minutes left
   date = new Date();
   let mins = Math.floor((storageDate - date) / 60000);
   mins = mins < 0 ? "Refresh now!" : mins < 1 ? "<1min" : mins + "mins";
-  console.log(mins);
+
   return mins;
 };
 
