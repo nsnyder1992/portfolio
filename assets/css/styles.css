@@ -418,8 +418,13 @@ h1,
 
 #device-insert {
   position: relative;
+  width: 100%;
   top: calc(50% - 100px);
-  left: calc(50% - 100px);
+  left: calc(50% - 150px);
+}
+
+#azure-cloud {
+  margin: 10px;
 }
 
 /* ---------------------------------------------------------- */
