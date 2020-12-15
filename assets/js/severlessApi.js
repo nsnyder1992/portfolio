@@ -61,7 +61,8 @@ let getLastUpdate = async () => {
       while (devInsert.firstChild) {
         devInsert.removeChild(devInsert.firstChild);
       }
-      $("device-insert").append(cloud);
+      azureLink.append(cloud);
+      $("#device-insert").append(azureLink);
     });
 };
 
@@ -73,6 +74,7 @@ function displayDevices(devices) {
   while (devInsert.firstChild) {
     devInsert.removeChild(devInsert.firstChild);
   }
+
   //set devices
   localStorage.setItem("devices", devices);
 
