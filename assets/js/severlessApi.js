@@ -9,6 +9,7 @@ const lastUpdate = "&lastUpdate=true";
 const devInsert = document.getElementById("device-insert");
 const azureBtn = $("#azure-btn");
 const cloud = $("#azure-cloud");
+const azureLink = $("#azure-link");
 
 //onClick
 azureBtn.click(() => checkRefresh());
@@ -27,6 +28,7 @@ let devices = localStorage.getItem("devices") || "";
 //fetch the last sensor data
 let getLastUpdate = async () => {
   //remove children
+  azureLink.remove();
   cloud.remove();
   while (devInsert.firstChild) {
     devInsert.removeChild(devInsert.firstChild);
@@ -66,6 +68,7 @@ let getLastUpdate = async () => {
 //display devices
 function displayDevices(devices) {
   //remove children
+  azureLink.remove();
   cloud.remove();
   while (devInsert.firstChild) {
     devInsert.removeChild(devInsert.firstChild);
