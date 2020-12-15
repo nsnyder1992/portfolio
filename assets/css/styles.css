@@ -427,6 +427,14 @@ h1,
   margin: 10px;
 }
 
+#azure-loading {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+}
+
 #azure-link {
   text-decoration: none;
   color: #010101;
