@@ -82,6 +82,7 @@ function displayDevices(devices) {
   //for each device create a card with device information
   devices.devices.forEach((dev) => {
     //create html elements
+    const link = document.createElement("a");
     const deviceContent = document.createElement("div");
     const card = document.createElement("div");
     const cardBody = document.createElement("div");
@@ -95,6 +96,10 @@ function displayDevices(devices) {
     header.className = "device-name lead";
     sensorList.className = "list-group list-group-flush";
 
+    //set attributes
+    link.href = "https://nsnyder1992.github.io/iot-serverless-app/";
+    link.target = "blank";
+
     //set name of device to header of card
     header.innerText = dev.name;
 
@@ -102,7 +107,8 @@ function displayDevices(devices) {
     cardBody.appendChild(header);
     card.appendChild(cardBody);
     card.appendChild(sensorList);
-    deviceContent.appendChild(card);
+    link.appendChild(card);
+    deviceContent.appendChild(link);
 
     //for each sensor create a list item and display data
     dev.sensors.forEach((sensor) => {
