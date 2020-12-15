@@ -418,7 +418,7 @@ h1,
 
 #device-insert {
   position: relative;
-  width: 100%;
+  width: 80%;
   top: calc(50% - 100px);
   left: calc(50% - 150px);
 }
