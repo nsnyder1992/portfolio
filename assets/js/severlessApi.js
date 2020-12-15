@@ -104,6 +104,7 @@ function displayDevices(devices) {
     //set attributes
     link.href = "https://nsnyder1992.github.io/iot-serverless-app/";
     link.target = "blank";
+    link.id = "azure-link";
 
     //set name of device to header of card
     header.innerText = dev.name;
