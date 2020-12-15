@@ -1,5 +1,4 @@
 //urls
-// const corsProxy = "https://cors-anywhere.herokuapp.com/";
 const baseUrl =
   "https://iot-portfolio-app.azurewebsites.net/api/HttpTrigger1?code=l72Ca3JksC7iCbCGzIgDIAVLbHi57D1ub1vp81Hk0T9oXGgJAdwAnw==";
 
