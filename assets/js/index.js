@@ -58,18 +58,24 @@ $(document).ready(function () {
   //Thumbnail logic
   //=============================================
   const thumbnailSelect = (thumbnail, content) => {
+    //for each thumbnail check id is same as selected and update and deselect others
     $(".thumbnail").each(function () {
       if ($(this)[0].id === thumbnail[0].id) {
         $(this).addClass("selected");
+
+        //store element id in local storage to use later to select on page refresh
         localStorage.setItem("selected-thumbnail", $(this)[0].id);
       } else {
         $(this).removeClass("selected");
       }
     });
 
+    //for each thumbnail content check id is same as selected and update and deselect others
     $(".thumbnail-content").each(function () {
       if ($(this)[0].id === content[0].id) {
         $(this).addClass("show");
+
+        //store element id in local storage to use later to select on page refresh
         localStorage.setItem("thumbnail-content", $(this)[0].id);
       } else {
         $(this).removeClass("show");
@@ -77,7 +83,9 @@ $(document).ready(function () {
     });
   };
 
+  //load last selected thumbnail in this case thumbnail and content parameters refer to the id of the element
   const loadLastThumbnail = (thumbnail, content) => {
+    //select thumbnail based on id given to the funciton
     $(".thumbnail").each(function () {
       if ($(this)[0].id === thumbnail) {
         $(this).addClass("selected");
@@ -86,6 +94,7 @@ $(document).ready(function () {
       }
     });
 
+    //select content based on id given to the funciton
     $(".thumbnail-content").each(function () {
       if ($(this)[0].id === content) {
         $(this).addClass("show");
@@ -103,6 +112,7 @@ $(document).ready(function () {
     if (thumbnail && content) loadLastThumbnail(thumbnail, content);
   };
 
+  //on load get last selected thumbnail and content and display them
   window.addEventListener("load", getSelectedThumbnail);
 
   //=============================================
