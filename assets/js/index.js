@@ -146,7 +146,8 @@ $(document).ready(function () {
   //breakpoints
   let lg = 950;
   let md = 750;
-  let sm = 500;
+  let sm = 585;
+  let xs = 440;
 
   //resize thumbnails
   function thumbnailResize() {
@@ -156,10 +157,26 @@ $(document).ready(function () {
       numThumbnails = 4;
     } else if (window.innerWidth < md && window.innerWidth > sm) {
       numThumbnails = 3;
-    } else if (window.innerWidth < sm) {
+    } else if (window.innerWidth < sm && window.innerWidth > xs) {
       numThumbnails = 2;
+    } else {
+      numThumbnails = 1;
     }
+
+    //hide groups if groups are created
+    if (groups.length > 0) hideGroup(grpIndex);
+
+    //create groups
     createGroups(numThumbnails);
+
+    //get selected index
+    getSelectedIndex();
+
+    //display current pageable dots
+    if (groups.length > 0) createDots(grpIndex);
+
+    //show group being indexed
+    if (groups.length > 0) showGroup(grpIndex);
   }
 
   //init groups and group index
@@ -167,8 +184,6 @@ $(document).ready(function () {
   let grpIndex = 0;
 
   thumbnailResize();
-  //show group being indexed
-  showGroup(grpIndex);
 
   function createGroups(numThumbnails) {
     groups = [];
@@ -203,10 +218,55 @@ $(document).ready(function () {
     }
   }
 
+  function getSelectedIndex() {
+    let selected = localStorage.getItem("selected-thumbnail") || false;
+
+    //loop thru groups and find first group with selected id
+    for (group in groups) {
+      groups[group].forEach((element) => {
+        if (element.id == selected) {
+          grpIndex = parseInt(group);
+          return;
+        }
+      });
+    }
+  }
+
+  function createDots(grpIndex) {
+    const insertDots = document.getElementById("pageable-dots");
+
+    while (insertDots.firstChild) {
+      insertDots.removeChild(insertDots.firstChild);
+    }
+
+    for (i in groups) {
+      const dot = document.createElement("div");
+      dot.id = `dot-${i}`;
+      dot.className = i == grpIndex ? "dot grow selected" : "dot grow";
+      insertDots.appendChild(dot);
+    }
+  }
+
+  function updateDots(lastIndex, newIndex) {
+    $(`#dot-${lastIndex}`).removeClass("selected");
+    $(`#dot-${newIndex}`).addClass("selected");
+  }
+
+  $(document).on("click", ".dot", (e) => {
+    //show dot group
+    let last = grpIndex;
+    hideGroup(last);
+    grpIndex = parseInt(e.target.id.split("-")[1]);
+    updateDots(last, grpIndex);
+    showGroup(grpIndex);
+  });
+
   $("#next-thumbnails").click(() => {
     //show next group
+    console.log;
     if (grpIndex + 1 < groups.length) {
       hideGroup(grpIndex);
+      updateDots(grpIndex, grpIndex + 1);
       grpIndex++;
       showGroup(grpIndex);
     }
@@ -216,6 +276,7 @@ $(document).ready(function () {
     //show next group
     if (grpIndex - 1 >= 0) {
       hideGroup(grpIndex);
+      updateDots(grpIndex, grpIndex - 1);
       grpIndex--;
       showGroup(grpIndex);
     }
