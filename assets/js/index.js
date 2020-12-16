@@ -141,17 +141,23 @@ $(document).ready(function () {
   window.addEventListener("load", repositionPage);
 
   //=============================================
-  // TODO: Paginate Thumbnails
+  // Paginate Thumbnails
   //=============================================
   //breakpoints
-  let lg = 950;
-  let md = 750;
-  let sm = 585;
-  let xs = 440;
+  let xxl = 1700;
+  let xl = 1400;
+  let lg = 1125;
+  let md = 935;
+  let sm = 740;
+  let xs = 575;
 
   //resize thumbnails
   function thumbnailResize() {
-    if (window.innerWidth > lg) {
+    if (window.innerWidth > xxl) {
+      numThumbnails = 7;
+    } else if (window.innerWidth < xxl && window.innerWidth > xl) {
+      numThumbnails = 6;
+    } else if (window.innerWidth < xl && window.innerWidth > lg) {
       numThumbnails = 5;
     } else if (window.innerWidth < lg && window.innerWidth > md) {
       numThumbnails = 4;
@@ -183,6 +189,11 @@ $(document).ready(function () {
   let groups = [];
   let grpIndex = 0;
 
+  //html elements
+  const insertDots = document.getElementById("pageable-dots");
+  const prevArrow = $("#prev-thumbnails");
+  const nextArrow = $("#next-thumbnails");
+
   thumbnailResize();
 
   function createGroups(numThumbnails) {
@@ -200,9 +211,16 @@ $(document).ready(function () {
             : i;
         groups.push(thumbnails.slice(i, numThumbnails + i));
       }
+      $("#prev-arrow-insert").append(prevArrow);
+      $("#next-arrow-insert").append(nextArrow);
     } else {
-      $(".thumbnail-arrow").remove();
-      $(".thumbnail").add("show");
+      //clean up and delete pagination items
+      while (insertDots.firstChild) {
+        insertDots.removeChild(insertDots.firstChild);
+      }
+      prevArrow.remove();
+      nextArrow.remove();
+      $(".thumbnail").addClass("show");
     }
   }
 
@@ -233,8 +251,6 @@ $(document).ready(function () {
   }
 
   function createDots(grpIndex) {
-    const insertDots = document.getElementById("pageable-dots");
-
     while (insertDots.firstChild) {
       insertDots.removeChild(insertDots.firstChild);
     }
@@ -261,9 +277,8 @@ $(document).ready(function () {
     showGroup(grpIndex);
   });
 
-  $("#next-thumbnails").click(() => {
+  $(document).on("click", "#next-thumbnails", (e) => {
     //show next group
-    console.log;
     if (grpIndex + 1 < groups.length) {
       hideGroup(grpIndex);
       updateDots(grpIndex, grpIndex + 1);
@@ -272,8 +287,8 @@ $(document).ready(function () {
     }
   });
 
-  $("#prev-thumbnails").click(() => {
-    //show next group
+  $(document).on("click", "#prev-thumbnails", (e) => {
+    //show previous group
     if (grpIndex - 1 >= 0) {
       hideGroup(grpIndex);
       updateDots(grpIndex, grpIndex - 1);
