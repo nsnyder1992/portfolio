@@ -156,6 +156,7 @@ $(document).ready(function () {
 
   //resize thumbnails
   function thumbnailResize() {
+    //set number of thumbnails depending on window width
     if (window.innerWidth > xxl) {
       numThumbnails = 7;
     } else if (window.innerWidth < xxl && window.innerWidth > xl) {
@@ -214,6 +215,8 @@ $(document).ready(function () {
             : i;
         groups.push(thumbnails.slice(i, numThumbnails + i));
       }
+
+      //add arrows
       $("#prev-arrow-insert").append(prevArrow);
       $("#next-arrow-insert").append(nextArrow);
     } else {
@@ -254,10 +257,12 @@ $(document).ready(function () {
   }
 
   function createDots(grpIndex) {
+    //delete current dots
     while (insertDots.firstChild) {
       insertDots.removeChild(insertDots.firstChild);
     }
 
+    //create the same amount of dots as there are groups
     for (i in groups) {
       const dot = document.createElement("div");
       dot.id = `dot-${i}`;
@@ -271,30 +276,47 @@ $(document).ready(function () {
     $(`#dot-${newIndex}`).addClass("selected");
   }
 
+  //click on a dot and update selected group/dot
   $(document).on("click", ".dot", (e) => {
-    //show dot group
+    //last group index
     let last = grpIndex;
+
+    //hide last group
     hideGroup(last);
+
+    //get target group
     grpIndex = parseInt(e.target.id.split("-")[1]);
+
+    //update dots and show gorup
     updateDots(last, grpIndex);
     showGroup(grpIndex);
   });
 
+  //click on arrow and show next group/dot
   $(document).on("click", "#next-thumbnails", (e) => {
-    //show next group
     if (grpIndex + 1 < groups.length) {
+      //hide last group
       hideGroup(grpIndex);
+
+      //update dots
       updateDots(grpIndex, grpIndex + 1);
+
+      //increase group index and show next group
       grpIndex++;
       showGroup(grpIndex);
     }
   });
 
+  //click on arrow and show previous group/dot
   $(document).on("click", "#prev-thumbnails", (e) => {
-    //show previous group
     if (grpIndex - 1 >= 0) {
+      //hide last group
       hideGroup(grpIndex);
+
+      //update dots
       updateDots(grpIndex, grpIndex - 1);
+
+      //decrease group index and show previous group
       grpIndex--;
       showGroup(grpIndex);
     }
