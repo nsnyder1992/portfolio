@@ -139,4 +139,77 @@ $(document).ready(function () {
   };
 
   window.addEventListener("load", repositionPage);
+
+  //=============================================
+  // TODO: Paginate Thumbnails
+  //=============================================
+  // //paginate project thumbnails
+  // if ($(".thumbnail").length > 5) {
+  //   let thumbnails = document.querySelectorAll(".thumbnail");
+
+  //   for (let i = 0; i < 5; i++) thumbnails[i].classList.add("show");
+  // }
+
+  // // //breakpoints
+  // // let lg = 875;
+  // // let md = 600;
+  // // let sm = 500;
+  // // let numThumbnails = 5;
+
+  // // $("#next-thumbnails").click(() => {
+  // //   //define indexes for loop
+  // //   let startIndex = $(".thumbnail").index(
+  // //     $(".pageable-thumbnails").find(".show")
+  // //   );
+  // //   let leftOver = $(".thumbnail").length - startIndex - numThumbnails;
+  // //   let showIndex =
+  // //     leftOver > numThumbnails
+  // //       ? startIndex + numThumbnails
+  // //       : startIndex + leftOver - 1;
+  // //   let endIndex = showIndex + numThumbnails;
+
+  // //   //get thumbnails
+  // //   let thumbnails = document.querySelectorAll(".thumbnail");
+
+  // //   //loop through thumnails and remove show class from last show and add show to new
+  // //   for (let i = startIndex; i <= endIndex; i++) {
+  // //     i <= showIndex
+  // //       ? thumbnails[i].classList.remove("show")
+  // //       : thumbnails[i].classList.add("show");
+  // //   }
+  // // });
+
+  // // $("#prev-thumbnails").click(() => {
+  // //   //define indexes for loop
+  // //   let startIndex = $(".thumbnail").index(
+  // //     $(".pageable-thumbnails").find(".show")
+  // //   );
+  // //   let leftOver = startIndex;
+  // //   startIndex = startIndex > numThumbnails ? startIndex - numThumbnails : 0;
+  // //   let showIndex =
+  // //     leftOver > numThumbnails ? startIndex + numThumbnails - 1 : numThumbnails;
+  // //   let endIndex = leftOver + (numThumbnails - 1);
+
+  // //   //get thumbnails
+  // //   let thumbnails = document.querySelectorAll(".thumbnail");
+
+  // //   //loop through thumnails and remove show class from last show and add show to new
+  // //   for (let i = startIndex; i <= endIndex; i++) {
+  // //     i < showIndex
+  // //       ? thumbnails[i].classList.add("show")
+  // //       : thumbnails[i].classList.remove("show");
+  // //   }
+  // // });
+
+  //resize thumbnails
+  // function thumbnailResize() {
+  //   if (window.innerWidth > lg) {
+  //     numThumbnails = 5;
+  //   } else if (window.innerWidth < lg && window.innerWidth > md) {
+  //     numThumbnails = 4;
+  //   } else if (window.innerWidth < md && window.innerWidth > sm) {
+  //     numThumbnails = 3;
+  //   }
+  // }
+  // window.addEventListener("resize", thumbnailResize);
 });
