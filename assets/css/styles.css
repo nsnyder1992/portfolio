@@ -270,7 +270,7 @@ h1,
 }
 
 .thumbnail {
-  /* display: none; */
+  display: none;
   width: 11em;
   margin: 5px 2px;
   padding-top: 0.25em;
@@ -280,7 +280,7 @@ h1,
   cursor: pointer;
 }
 
-/* .pageable-thumbnails {
+.pageable-thumbnails {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -292,14 +292,14 @@ h1,
 }
 
 .thumbnail-arrow {
-  color: white;
   opacity: 0.5;
-  background-color: rgba(77, 95, 138, 1);
+  color: rgba(77, 95, 138, 1);
   width: 35px;
   height: 75px;
-} */
+  cursor: pointer;
+}
 
-/* #prev-thumbnails {
+#prev-thumbnails {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,11 +311,11 @@ h1,
   justify-content: center;
   align-items: center;
   border-radius: 5px 20px 20px 5px;
-} */
+}
 
-/* .thumbnail-arrow:hover {
-  background-color: rgb(36, 45, 66);
-} */
+.thumbnail-arrow:hover {
+  color: rgb(36, 45, 66);
+}
 
 .thumbnail h5 {
   padding: 0.25em 0px;

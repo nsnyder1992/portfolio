@@ -143,73 +143,83 @@ $(document).ready(function () {
   //=============================================
   // TODO: Paginate Thumbnails
   //=============================================
-  // //paginate project thumbnails
-  // if ($(".thumbnail").length > 5) {
-  //   let thumbnails = document.querySelectorAll(".thumbnail");
-
-  //   for (let i = 0; i < 5; i++) thumbnails[i].classList.add("show");
-  // }
-
-  // // //breakpoints
-  // // let lg = 875;
-  // // let md = 600;
-  // // let sm = 500;
-  // // let numThumbnails = 5;
-
-  // // $("#next-thumbnails").click(() => {
-  // //   //define indexes for loop
-  // //   let startIndex = $(".thumbnail").index(
-  // //     $(".pageable-thumbnails").find(".show")
-  // //   );
-  // //   let leftOver = $(".thumbnail").length - startIndex - numThumbnails;
-  // //   let showIndex =
-  // //     leftOver > numThumbnails
-  // //       ? startIndex + numThumbnails
-  // //       : startIndex + leftOver - 1;
-  // //   let endIndex = showIndex + numThumbnails;
-
-  // //   //get thumbnails
-  // //   let thumbnails = document.querySelectorAll(".thumbnail");
-
-  // //   //loop through thumnails and remove show class from last show and add show to new
-  // //   for (let i = startIndex; i <= endIndex; i++) {
-  // //     i <= showIndex
-  // //       ? thumbnails[i].classList.remove("show")
-  // //       : thumbnails[i].classList.add("show");
-  // //   }
-  // // });
-
-  // // $("#prev-thumbnails").click(() => {
-  // //   //define indexes for loop
-  // //   let startIndex = $(".thumbnail").index(
-  // //     $(".pageable-thumbnails").find(".show")
-  // //   );
-  // //   let leftOver = startIndex;
-  // //   startIndex = startIndex > numThumbnails ? startIndex - numThumbnails : 0;
-  // //   let showIndex =
-  // //     leftOver > numThumbnails ? startIndex + numThumbnails - 1 : numThumbnails;
-  // //   let endIndex = leftOver + (numThumbnails - 1);
-
-  // //   //get thumbnails
-  // //   let thumbnails = document.querySelectorAll(".thumbnail");
-
-  // //   //loop through thumnails and remove show class from last show and add show to new
-  // //   for (let i = startIndex; i <= endIndex; i++) {
-  // //     i < showIndex
-  // //       ? thumbnails[i].classList.add("show")
-  // //       : thumbnails[i].classList.remove("show");
-  // //   }
-  // // });
+  //breakpoints
+  let lg = 950;
+  let md = 750;
+  let sm = 500;
 
   //resize thumbnails
-  // function thumbnailResize() {
-  //   if (window.innerWidth > lg) {
-  //     numThumbnails = 5;
-  //   } else if (window.innerWidth < lg && window.innerWidth > md) {
-  //     numThumbnails = 4;
-  //   } else if (window.innerWidth < md && window.innerWidth > sm) {
-  //     numThumbnails = 3;
-  //   }
-  // }
-  // window.addEventListener("resize", thumbnailResize);
+  function thumbnailResize() {
+    if (window.innerWidth > lg) {
+      numThumbnails = 5;
+    } else if (window.innerWidth < lg && window.innerWidth > md) {
+      numThumbnails = 4;
+    } else if (window.innerWidth < md && window.innerWidth > sm) {
+      numThumbnails = 3;
+    } else if (window.innerWidth < sm) {
+      numThumbnails = 2;
+    }
+    createGroups(numThumbnails);
+  }
+
+  //init groups and group index
+  let groups = [];
+  let grpIndex = 0;
+
+  thumbnailResize();
+  //show group being indexed
+  showGroup(grpIndex);
+
+  function createGroups(numThumbnails) {
+    groups = [];
+    //paginate project thumbnails
+    if ($(".thumbnail").length > numThumbnails) {
+      //get thumbnails
+      let thumbnails = [...document.querySelectorAll(".thumbnail")];
+
+      //populate group arrays
+      for (let i = 0; i < thumbnails.length; i += numThumbnails) {
+        i =
+          i + numThumbnails > thumbnails.length
+            ? thumbnails.length - numThumbnails
+            : i;
+        groups.push(thumbnails.slice(i, numThumbnails + i));
+      }
+    } else {
+      $(".thumbnail-arrow").remove();
+      $(".thumbnail").add("show");
+    }
+  }
+
+  function showGroup(grpIndex) {
+    for (i of groups[grpIndex]) {
+      document.getElementById(i.id).classList.add("show");
+    }
+  }
+
+  function hideGroup(grpIndex) {
+    for (i of groups[grpIndex]) {
+      document.getElementById(i.id).classList.remove("show");
+    }
+  }
+
+  $("#next-thumbnails").click(() => {
+    //show next group
+    if (grpIndex + 1 < groups.length) {
+      hideGroup(grpIndex);
+      grpIndex++;
+      showGroup(grpIndex);
+    }
+  });
+
+  $("#prev-thumbnails").click(() => {
+    //show next group
+    if (grpIndex - 1 >= 0) {
+      hideGroup(grpIndex);
+      grpIndex--;
+      showGroup(grpIndex);
+    }
+  });
+
+  window.addEventListener("resize", thumbnailResize);
 });

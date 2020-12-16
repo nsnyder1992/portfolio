@@ -9,7 +9,8 @@
     <title>Nick Snyder's Portfolio</title>
 
     <!-- Stylesheets and fonts -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -156,8 +157,8 @@
                 <h3 class="display-4 col-md-12 text-center"><strong>Projects</strong></h3>
             </div>
             <div class="text-center">
-                <div class="scrollable-thumbnails pageable-thumbnails">
-                    <!-- <div class="thumbnail-arrow" id="prev-thumbnails"><i class="fas fa-angle-left fa-3x"></i></div> -->
+                <div class="pageable-thumbnails">
+                    <div class="thumbnail-arrow show" id="prev-thumbnails"><i class="fas fa-angle-left fa-3x"></i></div>
                     <!-- Static Layout: https://nsnyder1992.github.io/static_layout/ -->
                     <div class="thumbnail static-thumbnail selected" id="static-thumbnail">
                         <h6 class="text-white">Static Layout</h6>
@@ -178,14 +179,14 @@
                         <i class="fas fa-database text-center fa-2x"></i>
                     </div>
                     <!-- API Challenge -->
-                    <div class="thumbnail api-thumbnail show" id="api-thumbnail">
+                    <div class="thumbnail api-thumbnail" id="api-thumbnail">
                         <h6 class="text-white">Spotify API</h6>
                         <i class="fab fa-html5 fa-2x text-center"></i>
                         <i class="fab fa-js-square text-center fa-2x"></i>
                         <i class="fab fa-css3-alt fa-2x text-center"></i>
                     </div>
                     <!-- Azure IoT -->
-                    <div class="thumbnail device-thumbnail show" id="device-thumbnail">
+                    <div class="thumbnail device-thumbnail" id="device-thumbnail">
                         <h6 class="text-white">Azure IoT Device</h6>
                         <i class="fab fa-python text-center fa-2x"></i>
                         <i class="fas fa-cloud text-center fa-2x"></i>
@@ -203,8 +204,9 @@
                         <h6 class="text-white">Mini-Game</h6>
                         <i class="fab fa-js-square text-center fa-2x"></i>
                     </div>
-                    <!-- <div class="thumbnail-arrow" id="next-thumbnails" ><i class="fas fa-angle-right fa-3x"></i></div> -->
+                    <div class="thumbnail-arrow show" id="next-thumbnails" ><i class="fas fa-angle-right fa-3x"></i></div>
                 </div>
+                <div class="pagable-dots"></div>
             </div>
             <hr class="my-2 text-white" id="divider2">
             
