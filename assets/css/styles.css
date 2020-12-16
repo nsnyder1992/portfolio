@@ -30,6 +30,7 @@ body,
   background-color: rgba(134, 67, 134, 1);
   border: 1px solid rgba(134, 67, 134, 1);
   width: 250px;
+  cursor: pointer;
 }
 
 .btn-primary:hover {
