@@ -73,7 +73,6 @@ button:active,
 .button:after,
 .button:focus,
 .button:active {
-  color: rgba(116, 41, 116, 1);
   background-color: transparent;
   outline: none;
 }
@@ -434,7 +433,7 @@ h1,
 .thumbnail-img {
   width: 350px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0px 0px 25px;
 }
 
