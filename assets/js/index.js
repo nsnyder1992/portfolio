@@ -211,7 +211,9 @@ $(document).ready(function () {
   thumbnailResize();
 
   function createGroups(numThumbnails) {
+    //empty groups array
     groups = [];
+
     //paginate project thumbnails
     if ($(".thumbnail").length > numThumbnails) {
       //get thumbnails
