@@ -22,6 +22,7 @@ This is my portfolio website that I will keep track of all my completed projects
 
 1. Flask API
 2. Full Stack App
+3. React.js APP
 
 ### TODO:
 
