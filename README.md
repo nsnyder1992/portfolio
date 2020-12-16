@@ -27,6 +27,5 @@ This is my portfolio website that I will keep track of all my completed projects
 
 ---
 
-- Paginate the Projects Tabs
 - Add a projects DB
 - Auto populate projects from projects DB
