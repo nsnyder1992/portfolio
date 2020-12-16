@@ -133,13 +133,12 @@ $(document).ready(function () {
 
   const repositionPage = () => {
     let tab = localStorage.getItem("selected-thumbnail") || false;
-    if (tab === "api-thumbnail") {
-      console.log("scrolling");
-      let pageVerticalPosition =
-        localStorage.getItem("pageVerticalPosition") || 0;
+    let pageVerticalPosition =
+      tab === "api-thumbnail"
+        ? localStorage.getItem("pageVerticalPosition") || 0
+        : 0;
 
-      window.scrollTo(0, pageVerticalPosition);
-    }
+    window.scrollTo(0, pageVerticalPosition);
   };
 
   window.addEventListener("load", repositionPage);
