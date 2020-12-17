@@ -38,4 +38,3 @@ This is my portfolio website that I will keep track of all my completed projects
 
 - Refresh mins left on button click
 - Tabs resize on minimize or docking on windows
-- IoT loading widget placement
