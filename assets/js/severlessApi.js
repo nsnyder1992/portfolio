@@ -239,7 +239,7 @@ function checkRefresh() {
 
     //store date for later
     localStorage.setItem("date", dateStr);
-
+    $("#azure-min").text(minsLeft());
     //get update
     getLastUpdate();
 
