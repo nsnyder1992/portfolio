@@ -75,7 +75,7 @@ function displayDevices(devices) {
   //set devices
   localStorage.setItem("devices", devices);
 
-  //if not object parse JSON to javascript object
+  //if not object parse JSON to javascript object this is for local storage loading
   if (!(devices instanceof Object)) devices = JSON.parse(devices);
 
   //get timestamp
