@@ -11,6 +11,9 @@ const azureBtn = $("#azure-btn");
 const cloud = $("#azure-cloud");
 const azureLink = $("#azure-link");
 
+//loading
+const loading = document.getElementById("azure-loading");
+
 //onClick
 azureBtn.click(() => checkRefresh());
 
@@ -34,8 +37,6 @@ let getLastUpdate = async () => {
     devInsert.removeChild(devInsert.firstChild);
   }
 
-  //loading
-  const loading = document.getElementById("azure-loading");
   loading.classList.add("show");
 
   //fetch
