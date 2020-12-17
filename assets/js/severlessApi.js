@@ -154,7 +154,8 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let month = d.getMonth();
   let day = d.getDate();
 
-  if (month === today.getMonth() && day == today.getDay()) console.log("today");
+  console.log(month, today.getMonth(), day, today.getDay());
+  if (month == today.getMonth() && day == today.getDay()) console.log("today");
 
   let hour = d.getHours();
   if (twelveHour) {
