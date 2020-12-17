@@ -153,12 +153,12 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let d = new Date(date);
   let month = d.getMonth();
   let day = d.getDate();
-  let date = "";
+  let dateStr = "";
 
   if (month == today.getMonth() && day == today.getDate()) {
-    date = "Today ";
+    dateStr = "Today ";
   } else {
-    date = month + "/" + day + " ";
+    dateStr = month + "/" + day + " ";
   }
 
   let hour = d.getHours();
@@ -177,7 +177,7 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let am_pm;
   timeOfDay ? (am_pm = d.getHours() > 12 ? "pm" : "am") : (am_pm = "");
 
-  return date + hour + ":" + min + ":" + sec + am_pm;
+  return dateStr + hour + ":" + min + ":" + sec + am_pm;
 }
 
 function checkRefresh() {
