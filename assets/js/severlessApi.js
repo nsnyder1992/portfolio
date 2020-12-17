@@ -70,6 +70,9 @@ function displayDevices(devices) {
     devInsert.removeChild(devInsert.firstChild);
   }
 
+  //set minutes left
+  $("#azure-min").text(minsLeft());
+
   //set devices
   localStorage.setItem("devices", devices);
 
