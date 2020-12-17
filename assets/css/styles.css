@@ -417,11 +417,17 @@ h1,
 .screenshots {
   min-width: 350px;
   margin: 10px 10px;
+  border-radius: 20px;
+  padding: 0px;
+  border: 1px solid black;
 }
 
 .screenshots-lg {
   margin: 10px 10px;
   width: 100%;
+  border-radius: 20px;
+  padding: 0px;
+  border: 1px solid black;
 }
 
 .thumbnail-content {

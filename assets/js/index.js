@@ -229,12 +229,7 @@ $(document).ready(function () {
       }
 
       //add/remove arrows
-      grpIndex >= 0
-        ? $("#prev-arrow-insert").append(prevArrow)
-        : prevArrow.remove();
-      grpIndex + 1 <= groups.length
-        ? $("#next-arrow-insert").append(nextArrow)
-        : nextArrow.remove();
+      addRemoveArrows(grpIndex);
     } else {
       //clean up and delete pagination items
       while (insertDots.firstChild) {
@@ -355,4 +350,5 @@ $(document).ready(function () {
   });
 
   window.addEventListener("resize", thumbnailResize);
+  window.addEventListener("load", thumbnailResize);
 });
