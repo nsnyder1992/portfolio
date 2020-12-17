@@ -3,7 +3,7 @@ const baseUrl =
   "https://iot-portfolio-app.azurewebsites.net/api/HttpTrigger1?code=l72Ca3JksC7iCbCGzIgDIAVLbHi57D1ub1vp81Hk0T9oXGgJAdwAnw==";
 
 //api queries
-https: const lastUpdate = "&lastUpdate=true";
+const lastUpdate = "&lastUpdate=true";
 
 //get insert point into document
 const devInsert = document.getElementById("device-insert");
@@ -46,8 +46,6 @@ let getLastUpdate = async () => {
   loading.appendChild(srOnly);
   devInsert.appendChild(loading);
 
-  console.log("fetching");
-
   //fetch
   await fetch(baseUrl + lastUpdate)
     .then((res) => res.json())
@@ -55,7 +53,6 @@ let getLastUpdate = async () => {
       json = JSON.stringify(json);
       $("#azure-min").text(minsLeft());
       displayDevices(json);
-      console.log("fetched");
     })
     .catch((err) => {
       console.log(err);
