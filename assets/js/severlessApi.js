@@ -149,9 +149,8 @@ function displayDevices(devices) {
 
 //format timestamp on sensor data
 function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
-  let today = new Date();
-  let d = new Date(date);
-  let monthsArr = [
+  //create a months array to index later
+  const monthsArr = [
     "Jan",
     "Feb",
     "Mar",
@@ -165,16 +164,26 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
     "Nov",
     "Dec",
   ];
+
+  //get today
+  let today = new Date();
+
+  //get devices last update date
+  let d = new Date(date);
+
+  //get month and day and init date string
   let month = monthsArr[d.getMonth()];
   let day = d.getDate();
   let dateStr = "";
 
+  //set date string to today if device date = today else set device date
   if (month == today.getMonth() && day == today.getDate()) {
     dateStr = "Today ";
   } else {
-    dateStr = month + "/" + day + " ";
+    dateStr = month + " " + day + " ";
   }
 
+  //get hours and set to twelve hours instead of 24 hours if selected
   let hour = d.getHours();
   if (twelveHour) {
     hour =
@@ -185,9 +194,12 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
         : d.getHours();
   }
 
+  //add a 0 to the front of time if under 10
   hour = hour < 10 ? "0" + hour : hour;
   let min = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
   let sec = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+
+  //set am or pm if selected
   let am_pm;
   timeOfDay ? (am_pm = d.getHours() > 12 ? "pm" : "am") : (am_pm = "");
 
