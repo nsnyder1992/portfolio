@@ -62,6 +62,7 @@ let getLastUpdate = async () => {
 //display devices
 function displayDevices(devices) {
   //remove children
+  loading.classList.remove("show");
   azureLink.remove();
   cloud.remove();
   while (devInsert.firstChild) {
