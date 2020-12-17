@@ -208,7 +208,10 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let am_pm;
   timeOfDay ? (am_pm = d.getHours() > 12 ? "pm" : "am") : (am_pm = "");
 
-  return dateStr + hour + ":" + min + ":" + sec + am_pm;
+  let fullDate = getDay
+    ? dateStr + hour + ":" + min + ":" + sec + am_pm
+    : hour + ":" + min + ":" + sec + am_pm;
+  return fullDate;
 }
 
 function checkRefresh() {
