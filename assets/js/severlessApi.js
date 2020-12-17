@@ -3,7 +3,7 @@ const baseUrl =
   "https://iot-portfolio-app.azurewebsites.net/api/HttpTrigger1?code=l72Ca3JksC7iCbCGzIgDIAVLbHi57D1ub1vp81Hk0T9oXGgJAdwAnw==";
 
 //api queries
-const lastUpdate = "&lastUpdate=true";
+https: const lastUpdate = "&lastUpdate=true";
 
 //get insert point into document
 const devInsert = document.getElementById("device-insert");
@@ -174,16 +174,21 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   //get devices last update date
   let d = new Date(date);
 
-  //get month and day and init date string
-  let month = monthsArr[d.getMonth()];
-  let day = d.getDate();
+  //init date string
   let dateStr = "";
 
-  //set date string to today if device date = today else set device date
-  if (month == today.getMonth() && day == today.getDate()) {
-    dateStr = "Today ";
-  } else {
-    dateStr = month + " " + day + " @ ";
+  //format date string if selected
+  if (getDay) {
+    //get month and day
+    let month = monthsArr[d.getMonth()];
+    let day = d.getDate();
+
+    //set date string to today if device date = today else set device date
+    if (month == today.getMonth() && day == today.getDate()) {
+      dateStr = "Today ";
+    } else {
+      dateStr = month + " " + day + " @ ";
+    }
   }
 
   //get hours and set to twelve hours instead of 24 hours if selected
