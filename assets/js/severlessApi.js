@@ -212,7 +212,6 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
     ? dateStr + hour + ":" + min + ":" + sec + am_pm
     : hour + ":" + min + ":" + sec + am_pm;
 
-  console.log(fullDate);
   return fullDate;
 }
 
@@ -237,8 +236,6 @@ function checkRefresh() {
     //create a string containing next date
     let dateStr = date.toDateString();
     dateStr += " " + formatDate(date, false, false, false);
-
-    console.log(dateStr);
 
     //store date for later
     localStorage.setItem("date", dateStr);
@@ -265,7 +262,7 @@ let minsLeft = () => {
 //delete cloud on load if devices
 if (devices !== "") {
   displayDevices(devices);
-  $("#azure-button").text(minsLeft());
+  $("#azure-min").text(minsLeft());
 } else {
   $("#azure-min").text(minsLeft());
 }
