@@ -211,6 +211,8 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let fullDate = getDay
     ? dateStr + hour + ":" + min + ":" + sec + am_pm
     : hour + ":" + min + ":" + sec + am_pm;
+
+  console.log(fullDate);
   return fullDate;
 }
 
@@ -235,6 +237,8 @@ function checkRefresh() {
     //create a string containing next date
     let dateStr = date.toDateString();
     dateStr += " " + formatDate(date, false, false, false);
+
+    console.log(dateStr);
 
     //store date for later
     localStorage.setItem("date", dateStr);
