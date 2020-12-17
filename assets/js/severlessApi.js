@@ -132,7 +132,7 @@ function displayDevices(devices) {
 
       //text attributes
       para.innerText = sensor.sensor;
-      pTime.innerText = "Timestamp: Today " + formatDate(devTime); //format date and return
+      pTime.innerText = "Timestamp: " + formatDate(devTime); //format date and return
       span.innerText = sensor.value;
 
       //append sensor data to card
@@ -153,9 +153,13 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let d = new Date(date);
   let month = d.getMonth();
   let day = d.getDate();
+  let date = "";
 
-  console.log(month, today.getMonth(), day, today.getDate());
-  if (month == today.getMonth() && day == today.getDate()) console.log("today");
+  if (month == today.getMonth() && day == today.getDate()) {
+    date = "Today ";
+  } else {
+    date = month + "/" + day + " ";
+  }
 
   let hour = d.getHours();
   if (twelveHour) {
@@ -173,7 +177,7 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let am_pm;
   timeOfDay ? (am_pm = d.getHours() > 12 ? "pm" : "am") : (am_pm = "");
 
-  return hour + ":" + min + ":" + sec + am_pm;
+  return date + hour + ":" + min + ":" + sec + am_pm;
 }
 
 function checkRefresh() {
