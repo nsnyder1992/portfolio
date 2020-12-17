@@ -228,9 +228,13 @@ $(document).ready(function () {
         groups.push(thumbnails.slice(i, numThumbnails + i));
       }
 
-      //add arrows
-      $("#prev-arrow-insert").append(prevArrow);
-      $("#next-arrow-insert").append(nextArrow);
+      //add/remove arrows
+      grpIndex >= 0
+        ? $("#prev-arrow-insert").append(prevArrow)
+        : prevArrow.remove();
+      grpIndex + 1 <= groups.length
+        ? $("#next-arrow-insert").append(nextArrow)
+        : nextArrow.remove();
     } else {
       //clean up and delete pagination items
       while (insertDots.firstChild) {
@@ -283,9 +287,20 @@ $(document).ready(function () {
     }
   }
 
+  //update selector dots
   function updateDots(lastIndex, newIndex) {
     $(`#dot-${lastIndex}`).removeClass("selected");
     $(`#dot-${newIndex}`).addClass("selected");
+  }
+
+  //add/remove arrows
+  function addRemoveArrows(grpIndex) {
+    grpIndex > 0
+      ? $("#prev-arrow-insert").append(prevArrow)
+      : prevArrow.remove();
+    grpIndex + 1 < groups.length
+      ? $("#next-arrow-insert").append(nextArrow)
+      : nextArrow.remove();
   }
 
   //click on a dot and update selected group/dot
@@ -298,6 +313,9 @@ $(document).ready(function () {
 
     //get target group
     grpIndex = parseInt(e.target.id.split("-")[1]);
+
+    //add/remove arrows
+    addRemoveArrows(grpIndex);
 
     //update dots and show gorup
     updateDots(last, grpIndex);
@@ -315,6 +333,7 @@ $(document).ready(function () {
 
       //increase group index and show next group
       grpIndex++;
+      addRemoveArrows(grpIndex); //add/remove arrows
       showGroup(grpIndex);
     }
   });
@@ -330,6 +349,7 @@ $(document).ready(function () {
 
       //decrease group index and show previous group
       grpIndex--;
+      addRemoveArrows(grpIndex); //add/remove arrows
       showGroup(grpIndex);
     }
   });
