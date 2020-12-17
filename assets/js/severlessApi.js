@@ -46,6 +46,8 @@ let getLastUpdate = async () => {
   loading.appendChild(srOnly);
   devInsert.appendChild(loading);
 
+  console.log("fetching");
+
   //fetch
   await fetch(baseUrl + lastUpdate)
     .then((res) => res.json())
@@ -53,6 +55,7 @@ let getLastUpdate = async () => {
       json = JSON.stringify(json);
       $("#azure-min").text(minsLeft());
       displayDevices(json);
+      console.log("fetched");
     })
     .catch((err) => {
       console.log(err);
