@@ -44,7 +44,6 @@ let getLastUpdate = async () => {
     .then((res) => res.json())
     .then((json) => {
       json = JSON.stringify(json);
-      $("#azure-min").text(minsLeft());
       displayDevices(json);
     })
     .catch((err) => {
@@ -237,7 +236,7 @@ function checkRefresh() {
 
     //store date for later
     localStorage.setItem("date", dateStr);
-    $("#azure-min").text(minsLeft());
+
     //get update
     getLastUpdate();
 
