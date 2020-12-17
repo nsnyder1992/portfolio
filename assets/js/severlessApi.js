@@ -180,7 +180,7 @@ function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   if (month == today.getMonth() && day == today.getDate()) {
     dateStr = "Today ";
   } else {
-    dateStr = month + " " + day + " ";
+    dateStr = month + " " + day + " @ ";
   }
 
   //get hours and set to twelve hours instead of 24 hours if selected
