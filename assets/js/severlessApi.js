@@ -151,7 +151,21 @@ function displayDevices(devices) {
 function formatDate(date, getDay = true, timeOfDay = true, twelveHour = true) {
   let today = new Date();
   let d = new Date(date);
-  let month = parseInt(d.getMonth() + 1);
+  let monthsArr = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = monthsArr[d.getMonth()];
   let day = d.getDate();
   let dateStr = "";
 
