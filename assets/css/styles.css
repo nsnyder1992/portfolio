@@ -536,6 +536,10 @@ h1,
   margin: 10px;
 }
 
+.azure-loading {
+  display: none;
+}
+
 #azure-loading {
   position: relative;
   width: 30px;

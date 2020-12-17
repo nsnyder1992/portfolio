@@ -35,16 +35,8 @@ let getLastUpdate = async () => {
   }
 
   //loading
-  const loading = document.createElement("div");
-  const srOnly = document.createElement("span");
-  loading.className = "spinner-border text-secondary";
-  loading.role = "status";
-  loading.id = "azure-loading";
-  srOnly.className = "sr-only";
-  srOnly.innerText = "Loading...";
-
-  loading.appendChild(srOnly);
-  devInsert.appendChild(loading);
+  const loading = document.getElementById("azure-loading");
+  loading.classList.add("show");
 
   //fetch
   await fetch(baseUrl + lastUpdate)
@@ -58,6 +50,7 @@ let getLastUpdate = async () => {
       console.log(err);
 
       //on fail clean up loading and append cloud
+      loading.classList.remove("show");
       while (devInsert.firstChild) {
         devInsert.removeChild(devInsert.firstChild);
       }
