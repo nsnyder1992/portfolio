@@ -179,18 +179,18 @@ h1,
 /* Scrollbar Track */
 ::-webkit-scrollbar-track {
   background: rgb(193, 198, 209);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(120, 133, 161);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* Scrollbar Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(77, 95, 138, 1);
+  background: rgb(80, 89, 109);
 }
 
 /* ---------------------------------------------------------- */
