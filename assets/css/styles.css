@@ -489,6 +489,10 @@ h1,
   padding: 10px 0;
 }
 
+#spotify {
+  margin-bottom: 10px;
+}
+
 .github-link {
   color: rgba(134, 67, 134, 1);
 }
