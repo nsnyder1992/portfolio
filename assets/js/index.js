@@ -153,202 +153,202 @@ $(document).ready(function () {
 
   window.addEventListener("load", repositionPage);
 
-  //=============================================
-  // Paginate Thumbnails
-  //=============================================
-  //breakpoints
-  let xxl = 1700;
-  let xl = 1400;
-  let lg = 1125;
-  let md = 935;
-  let sm = 740;
-  let xs = 575;
+  // //=============================================
+  // // Paginate Thumbnails (This has bugs for back to scrollable thumbnails)
+  // //=============================================
+  // //breakpoints
+  // let xxl = 1700;
+  // let xl = 1400;
+  // let lg = 1125;
+  // let md = 935;
+  // let sm = 740;
+  // let xs = 575;
 
-  //resize thumbnails
-  function thumbnailResize() {
-    //set number of thumbnails depending on window width
-    if (window.innerWidth > xxl) {
-      numThumbnails = 7;
-    } else if (window.innerWidth < xxl && window.innerWidth > xl) {
-      numThumbnails = 6;
-    } else if (window.innerWidth < xl && window.innerWidth > lg) {
-      numThumbnails = 5;
-    } else if (window.innerWidth < lg && window.innerWidth > md) {
-      numThumbnails = 4;
-    } else if (window.innerWidth < md && window.innerWidth > sm) {
-      numThumbnails = 3;
-    } else if (window.innerWidth < sm && window.innerWidth > xs) {
-      numThumbnails = 2;
-    } else {
-      numThumbnails = 1;
-    }
+  // //resize thumbnails
+  // function thumbnailResize() {
+  //   //set number of thumbnails depending on window width
+  //   if (window.innerWidth > xxl) {
+  //     numThumbnails = 7;
+  //   } else if (window.innerWidth < xxl && window.innerWidth > xl) {
+  //     numThumbnails = 6;
+  //   } else if (window.innerWidth < xl && window.innerWidth > lg) {
+  //     numThumbnails = 5;
+  //   } else if (window.innerWidth < lg && window.innerWidth > md) {
+  //     numThumbnails = 4;
+  //   } else if (window.innerWidth < md && window.innerWidth > sm) {
+  //     numThumbnails = 3;
+  //   } else if (window.innerWidth < sm && window.innerWidth > xs) {
+  //     numThumbnails = 2;
+  //   } else {
+  //     numThumbnails = 1;
+  //   }
 
-    //hide groups if groups are created
-    if (groups.length > 0) hideGroup(grpIndex);
+  //   //hide groups if groups are created
+  //   if (groups.length > 0) hideGroup(grpIndex);
 
-    //create groups
-    createGroups(numThumbnails);
+  //   //create groups
+  //   createGroups(numThumbnails);
 
-    //get selected index
-    getSelectedIndex();
+  //   //get selected index
+  //   getSelectedIndex();
 
-    //display current pageable dots
-    if (groups.length > 0) createDots(grpIndex);
+  //   //display current pageable dots
+  //   if (groups.length > 0) createDots(grpIndex);
 
-    //show group being indexed
-    if (groups.length > 0) showGroup(grpIndex);
-  }
+  //   //show group being indexed
+  //   if (groups.length > 0) showGroup(grpIndex);
+  // }
 
-  //init groups and group index
-  let groups = [];
-  let grpIndex = 0;
+  // //init groups and group index
+  // let groups = [];
+  // let grpIndex = 0;
 
-  //html elements
-  const insertDots = document.getElementById("pageable-dots");
-  const prevArrow = $("#prev-thumbnails");
-  const nextArrow = $("#next-thumbnails");
+  // //html elements
+  // const insertDots = document.getElementById("pageable-dots");
+  // const prevArrow = $("#prev-thumbnails");
+  // const nextArrow = $("#next-thumbnails");
 
-  thumbnailResize();
+  // thumbnailResize();
 
-  function createGroups(numThumbnails) {
-    //empty groups array
-    groups = [];
+  // function createGroups(numThumbnails) {
+  //   //empty groups array
+  //   groups = [];
 
-    //paginate project thumbnails
-    if ($(".thumbnail").length > numThumbnails) {
-      //get thumbnails
-      let thumbnails = [...document.querySelectorAll(".thumbnail")];
+  //   //paginate project thumbnails
+  //   if ($(".thumbnail").length > numThumbnails) {
+  //     //get thumbnails
+  //     let thumbnails = [...document.querySelectorAll(".thumbnail")];
 
-      //populate group arrays
-      for (let i = 0; i < thumbnails.length; i += numThumbnails) {
-        i =
-          i + numThumbnails > thumbnails.length
-            ? thumbnails.length - numThumbnails
-            : i;
-        groups.push(thumbnails.slice(i, numThumbnails + i));
-      }
+  //     //populate group arrays
+  //     for (let i = 0; i < thumbnails.length; i += numThumbnails) {
+  //       i =
+  //         i + numThumbnails > thumbnails.length
+  //           ? thumbnails.length - numThumbnails
+  //           : i;
+  //       groups.push(thumbnails.slice(i, numThumbnails + i));
+  //     }
 
-      //add/remove arrows
-      addRemoveArrows(grpIndex);
-    } else {
-      //clean up and delete pagination items
-      while (insertDots.firstChild) {
-        insertDots.removeChild(insertDots.firstChild);
-      }
-      prevArrow.remove();
-      nextArrow.remove();
-      $(".thumbnail").addClass("show");
-    }
-  }
+  //     //add/remove arrows
+  //     addRemoveArrows(grpIndex);
+  //   } else {
+  //     //clean up and delete pagination items
+  //     while (insertDots.firstChild) {
+  //       insertDots.removeChild(insertDots.firstChild);
+  //     }
+  //     prevArrow.remove();
+  //     nextArrow.remove();
+  //     $(".thumbnail").addClass("show");
+  //   }
+  // }
 
-  function showGroup(grpIndex) {
-    for (i of groups[grpIndex]) {
-      document.getElementById(i.id).classList.add("show");
-    }
-  }
+  // function showGroup(grpIndex) {
+  //   for (i of groups[grpIndex]) {
+  //     document.getElementById(i.id).classList.add("show");
+  //   }
+  // }
 
-  function hideGroup(grpIndex) {
-    for (i of groups[grpIndex]) {
-      document.getElementById(i.id).classList.remove("show");
-    }
-  }
+  // function hideGroup(grpIndex) {
+  //   for (i of groups[grpIndex]) {
+  //     document.getElementById(i.id).classList.remove("show");
+  //   }
+  // }
 
-  function getSelectedIndex() {
-    let selected = localStorage.getItem("selected-thumbnail") || false;
+  // function getSelectedIndex() {
+  //   let selected = localStorage.getItem("selected-thumbnail") || false;
 
-    //loop thru groups and find first group with selected id
-    for (group in groups) {
-      groups[group].forEach((element) => {
-        if (element.id == selected) {
-          grpIndex = parseInt(group);
-          return;
-        }
-      });
-    }
-  }
+  //   //loop thru groups and find first group with selected id
+  //   for (group in groups) {
+  //     groups[group].forEach((element) => {
+  //       if (element.id == selected) {
+  //         grpIndex = parseInt(group);
+  //         return;
+  //       }
+  //     });
+  //   }
+  // }
 
-  function createDots(grpIndex) {
-    //delete current dots
-    while (insertDots.firstChild) {
-      insertDots.removeChild(insertDots.firstChild);
-    }
+  // function createDots(grpIndex) {
+  //   //delete current dots
+  //   while (insertDots.firstChild) {
+  //     insertDots.removeChild(insertDots.firstChild);
+  //   }
 
-    //create the same amount of dots as there are groups
-    for (i in groups) {
-      const dot = document.createElement("div");
-      dot.id = `dot-${i}`;
-      dot.className = i == grpIndex ? "dot grow selected" : "dot grow";
-      insertDots.appendChild(dot);
-    }
-  }
+  //   //create the same amount of dots as there are groups
+  //   for (i in groups) {
+  //     const dot = document.createElement("div");
+  //     dot.id = `dot-${i}`;
+  //     dot.className = i == grpIndex ? "dot grow selected" : "dot grow";
+  //     insertDots.appendChild(dot);
+  //   }
+  // }
 
-  //update selector dots
-  function updateDots(lastIndex, newIndex) {
-    $(`#dot-${lastIndex}`).removeClass("selected");
-    $(`#dot-${newIndex}`).addClass("selected");
-  }
+  // //update selector dots
+  // function updateDots(lastIndex, newIndex) {
+  //   $(`#dot-${lastIndex}`).removeClass("selected");
+  //   $(`#dot-${newIndex}`).addClass("selected");
+  // }
 
-  //add/remove arrows
-  function addRemoveArrows(grpIndex) {
-    grpIndex > 0
-      ? $("#prev-arrow-insert").append(prevArrow)
-      : prevArrow.remove();
-    grpIndex + 1 < groups.length
-      ? $("#next-arrow-insert").append(nextArrow)
-      : nextArrow.remove();
-  }
+  // //add/remove arrows
+  // function addRemoveArrows(grpIndex) {
+  //   grpIndex > 0
+  //     ? $("#prev-arrow-insert").append(prevArrow)
+  //     : prevArrow.remove();
+  //   grpIndex + 1 < groups.length
+  //     ? $("#next-arrow-insert").append(nextArrow)
+  //     : nextArrow.remove();
+  // }
 
-  //click on a dot and update selected group/dot
-  $(document).on("click", ".dot", (e) => {
-    //last group index
-    let last = grpIndex;
+  // //click on a dot and update selected group/dot
+  // $(document).on("click", ".dot", (e) => {
+  //   //last group index
+  //   let last = grpIndex;
 
-    //hide last group
-    hideGroup(last);
+  //   //hide last group
+  //   hideGroup(last);
 
-    //get target group
-    grpIndex = parseInt(e.target.id.split("-")[1]);
+  //   //get target group
+  //   grpIndex = parseInt(e.target.id.split("-")[1]);
 
-    //add/remove arrows
-    addRemoveArrows(grpIndex);
+  //   //add/remove arrows
+  //   addRemoveArrows(grpIndex);
 
-    //update dots and show gorup
-    updateDots(last, grpIndex);
-    showGroup(grpIndex);
-  });
+  //   //update dots and show gorup
+  //   updateDots(last, grpIndex);
+  //   showGroup(grpIndex);
+  // });
 
-  //click on arrow and show next group/dot
-  $(document).on("click", "#next-thumbnails", (e) => {
-    if (grpIndex + 1 < groups.length) {
-      //hide last group
-      hideGroup(grpIndex);
+  // //click on arrow and show next group/dot
+  // $(document).on("click", "#next-thumbnails", (e) => {
+  //   if (grpIndex + 1 < groups.length) {
+  //     //hide last group
+  //     hideGroup(grpIndex);
 
-      //update dots
-      updateDots(grpIndex, grpIndex + 1);
+  //     //update dots
+  //     updateDots(grpIndex, grpIndex + 1);
 
-      //increase group index and show next group
-      grpIndex++;
-      addRemoveArrows(grpIndex); //add/remove arrows
-      showGroup(grpIndex);
-    }
-  });
+  //     //increase group index and show next group
+  //     grpIndex++;
+  //     addRemoveArrows(grpIndex); //add/remove arrows
+  //     showGroup(grpIndex);
+  //   }
+  // });
 
-  //click on arrow and show previous group/dot
-  $(document).on("click", "#prev-thumbnails", (e) => {
-    if (grpIndex - 1 >= 0) {
-      //hide last group
-      hideGroup(grpIndex);
+  // //click on arrow and show previous group/dot
+  // $(document).on("click", "#prev-thumbnails", (e) => {
+  //   if (grpIndex - 1 >= 0) {
+  //     //hide last group
+  //     hideGroup(grpIndex);
 
-      //update dots
-      updateDots(grpIndex, grpIndex - 1);
+  //     //update dots
+  //     updateDots(grpIndex, grpIndex - 1);
 
-      //decrease group index and show previous group
-      grpIndex--;
-      addRemoveArrows(grpIndex); //add/remove arrows
-      showGroup(grpIndex);
-    }
-  });
+  //     //decrease group index and show previous group
+  //     grpIndex--;
+  //     addRemoveArrows(grpIndex); //add/remove arrows
+  //     showGroup(grpIndex);
+  //   }
+  // });
 
-  window.addEventListener("resize", thumbnailResize);
-  window.addEventListener("load", thumbnailResize);
+  // window.addEventListener("resize", thumbnailResize);
+  // window.addEventListener("load", thumbnailResize);
 });
