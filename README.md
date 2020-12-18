@@ -36,5 +36,6 @@ This is my portfolio website that I will keep track of all my completed projects
 
 ---
 
-- Refresh mins left on button click
-- Tabs resize on minimize or docking on windows
+- Refresh minutes left on button click for IoT App
+- SVG image does not show up on Safari or Fire Fox
+- Tabs resize on minimize or docking on windows (went back to scrollable for now)
