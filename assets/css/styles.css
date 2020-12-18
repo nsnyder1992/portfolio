@@ -29,8 +29,15 @@ body,
 .btn-primary {
   background-color: rgba(134, 67, 134, 1);
   border: 1px solid rgba(134, 67, 134, 1);
-  width: 250px;
   cursor: pointer;
+}
+
+.btn-lg {
+  width: 250px;
+}
+
+.form-button {
+  width: 150px;
 }
 
 .btn-primary:hover {
