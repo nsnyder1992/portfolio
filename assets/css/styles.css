@@ -10,8 +10,8 @@
   background-color: rgba(77, 95, 138, 1);
 }
 
-.navbar-light {
-  background-color: rgb(68, 81, 109);
+.navbar-dark {
+  background-color: rgb(43 47 56); /*rgb(68, 81, 109);*/
   color: rgba(206, 172, 104, 1);
 }
 
