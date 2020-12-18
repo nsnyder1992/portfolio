@@ -17,7 +17,7 @@
 
 body,
 .light-theme {
-  background-color: rgb(120, 133, 161);
+  background-color: rgb(80, 89, 109);
   margin: 0;
 }
 
@@ -332,7 +332,7 @@ h1,
 }
 
 .thumbnail:hover {
-  background-color: rgba(77, 95, 138, 1);
+  background-color: rgb(80, 89, 109);
 }
 
 .thumbnail-arrow {
