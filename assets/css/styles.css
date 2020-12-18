@@ -405,13 +405,13 @@ h1,
 }
 
 .download {
-  color: rgba(116, 41, 116, 1);
+  color: rgba(134, 67, 134, 1);
 }
 
 .download:hover {
   text-decoration: none;
   cursor: pointer;
-  color: orange;
+  color: rgba(116, 41, 116, 1);
 }
 
 .screenshots {
