@@ -120,32 +120,28 @@
     <!-- About Section -->
     <div class="container-fluid about-container" id="about">
         <div class="row">
-            <h3 class="display-4 col-md-12 text-center text-white history show lead" id="about-header"><strong>About</strong></h3>
-            <h3 class="display-4 col-md-12 text-center game text-white"><strong>Mini-Game</strong></h3>
-            <div class="col-lg-3 text-center history show headshot-container">
+            <div class="col-xl-3 text-center history show headshot-container">
                 <a href="https://instagram.com/dennisthebrian?igshid=uviruza4tqk1" target="blank"><p class="brains-tag">@dennisthebrian</p>
                 <img id="headshot" src="assets/img/headshot.jpg" alt="My Picture" width="250px" loading="lazy"></a>
             </div>
-            <div class="col-lg-9">
+            <div class="col-xl-9">
+                <h3 class="display-4 col-md-12 text-center text-white history show lead" id="about-header"><strong>About</strong></h3>
                 <div class="history show">
                     <p class="lead text-white">
-                        I have been working in Industrial automation for 5 years as a Controls Engineer, which is a fancy way of saying Software Engineer for machines. Besides machine controls, my employers sought me out to complete special projects, because I am a self-starter and love to learn new things. Some of these projects included:
+                        I have been working in Industrial automation for 5 years as a Controls Engineer, which is a fancy way of saying Software Engineer for machines. Besides machine controls, my employers sought me out to complete special projects, because I am a self-starter and love to learn new things.
                     </p>
-                    <ul class="text-white">
-                        <li>IIoT Hardware</li>
-                        <li>MQTT</li>
-                        <li>Azure IoT Hub</li>
-                        <li>AWS IoT Core</li>
-                        <li>SQL Databases</li>
-                        <li>RESTful APIs</li>
-                        <li>SCADA Design</li>
-                    </ul>
                     <p class="lead text-white">
                         I am always looking for new and exciting projects to work on! If you would like to contact me about your project, click the button below!
                     </p>
                 </div>
             </div>  
-            <div class="col-md-12 history show text-center">
+            <!-- <div class="col-xl-4">
+                <h3 class="display-4 col-md-12 text-center text-white history show lead" id="about-header"><strong>Skills</strong></h3>
+                <div class="history show">
+                    <canvas id="skillz-chart" width="100%" style="margin-bottom: 10px;"></canvas>
+                </div>
+            </div> -->
+            <div class="col-xl-12 history show text-center">
                 <button class="btn btn-lg btn-primary contact-me" data-toggle="modal" data-target="contactModal">Contact me!</button>
             </div>
         </div>
@@ -396,6 +392,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
+<!-- AM CHART JS-->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/continentsLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 <!-- FONT AWESOME -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">

@@ -153,202 +153,69 @@ $(document).ready(function () {
 
   window.addEventListener("load", repositionPage);
 
-  // //=============================================
-  // // Paginate Thumbnails (This has bugs for back to scrollable thumbnails)
-  // //=============================================
-  // //breakpoints
-  // let xxl = 1700;
-  // let xl = 1400;
-  // let lg = 1125;
-  // let md = 935;
-  // let sm = 740;
-  // let xs = 575;
-
-  // //resize thumbnails
-  // function thumbnailResize() {
-  //   //set number of thumbnails depending on window width
-  //   if (window.innerWidth > xxl) {
-  //     numThumbnails = 7;
-  //   } else if (window.innerWidth < xxl && window.innerWidth > xl) {
-  //     numThumbnails = 6;
-  //   } else if (window.innerWidth < xl && window.innerWidth > lg) {
-  //     numThumbnails = 5;
-  //   } else if (window.innerWidth < lg && window.innerWidth > md) {
-  //     numThumbnails = 4;
-  //   } else if (window.innerWidth < md && window.innerWidth > sm) {
-  //     numThumbnails = 3;
-  //   } else if (window.innerWidth < sm && window.innerWidth > xs) {
-  //     numThumbnails = 2;
-  //   } else {
-  //     numThumbnails = 1;
-  //   }
-
-  //   //hide groups if groups are created
-  //   if (groups.length > 0) hideGroup(grpIndex);
-
-  //   //create groups
-  //   createGroups(numThumbnails);
-
-  //   //get selected index
-  //   getSelectedIndex();
-
-  //   //display current pageable dots
-  //   if (groups.length > 0) createDots(grpIndex);
-
-  //   //show group being indexed
-  //   if (groups.length > 0) showGroup(grpIndex);
-  // }
-
-  // //init groups and group index
-  // let groups = [];
-  // let grpIndex = 0;
-
-  // //html elements
-  // const insertDots = document.getElementById("pageable-dots");
-  // const prevArrow = $("#prev-thumbnails");
-  // const nextArrow = $("#next-thumbnails");
-
-  // thumbnailResize();
-
-  // function createGroups(numThumbnails) {
-  //   //empty groups array
-  //   groups = [];
-
-  //   //paginate project thumbnails
-  //   if ($(".thumbnail").length > numThumbnails) {
-  //     //get thumbnails
-  //     let thumbnails = [...document.querySelectorAll(".thumbnail")];
-
-  //     //populate group arrays
-  //     for (let i = 0; i < thumbnails.length; i += numThumbnails) {
-  //       i =
-  //         i + numThumbnails > thumbnails.length
-  //           ? thumbnails.length - numThumbnails
-  //           : i;
-  //       groups.push(thumbnails.slice(i, numThumbnails + i));
-  //     }
-
-  //     //add/remove arrows
-  //     addRemoveArrows(grpIndex);
-  //   } else {
-  //     //clean up and delete pagination items
-  //     while (insertDots.firstChild) {
-  //       insertDots.removeChild(insertDots.firstChild);
-  //     }
-  //     prevArrow.remove();
-  //     nextArrow.remove();
-  //     $(".thumbnail").addClass("show");
-  //   }
-  // }
-
-  // function showGroup(grpIndex) {
-  //   for (i of groups[grpIndex]) {
-  //     document.getElementById(i.id).classList.add("show");
-  //   }
-  // }
-
-  // function hideGroup(grpIndex) {
-  //   for (i of groups[grpIndex]) {
-  //     document.getElementById(i.id).classList.remove("show");
-  //   }
-  // }
-
-  // function getSelectedIndex() {
-  //   let selected = localStorage.getItem("selected-thumbnail") || false;
-
-  //   //loop thru groups and find first group with selected id
-  //   for (group in groups) {
-  //     groups[group].forEach((element) => {
-  //       if (element.id == selected) {
-  //         grpIndex = parseInt(group);
-  //         return;
-  //       }
-  //     });
-  //   }
-  // }
-
-  // function createDots(grpIndex) {
-  //   //delete current dots
-  //   while (insertDots.firstChild) {
-  //     insertDots.removeChild(insertDots.firstChild);
-  //   }
-
-  //   //create the same amount of dots as there are groups
-  //   for (i in groups) {
-  //     const dot = document.createElement("div");
-  //     dot.id = `dot-${i}`;
-  //     dot.className = i == grpIndex ? "dot grow selected" : "dot grow";
-  //     insertDots.appendChild(dot);
-  //   }
-  // }
-
-  // //update selector dots
-  // function updateDots(lastIndex, newIndex) {
-  //   $(`#dot-${lastIndex}`).removeClass("selected");
-  //   $(`#dot-${newIndex}`).addClass("selected");
-  // }
-
-  // //add/remove arrows
-  // function addRemoveArrows(grpIndex) {
-  //   grpIndex > 0
-  //     ? $("#prev-arrow-insert").append(prevArrow)
-  //     : prevArrow.remove();
-  //   grpIndex + 1 < groups.length
-  //     ? $("#next-arrow-insert").append(nextArrow)
-  //     : nextArrow.remove();
-  // }
-
-  // //click on a dot and update selected group/dot
-  // $(document).on("click", ".dot", (e) => {
-  //   //last group index
-  //   let last = grpIndex;
-
-  //   //hide last group
-  //   hideGroup(last);
-
-  //   //get target group
-  //   grpIndex = parseInt(e.target.id.split("-")[1]);
-
-  //   //add/remove arrows
-  //   addRemoveArrows(grpIndex);
-
-  //   //update dots and show gorup
-  //   updateDots(last, grpIndex);
-  //   showGroup(grpIndex);
+  //=============================================
+  // Skill"z" Chart
+  //=============================================
+  // var ctx = document.getElementById("skillz-chart").getContext("2d");
+  // Chart.defaults.global.defaultFontColor = "white";
+  // var myChart = new Chart(ctx, {
+  //   type: "horizontalBar",
+  //   data: {
+  //     labels: [
+  //       "Python",
+  //       "Javascript",
+  //       "HTML",
+  //       "CSS",
+  //       "IoT Cloud",
+  //       "IoT Hardware",
+  //       "Linux",
+  //       "Machine Learning",
+  //       "C#",
+  //     ],
+  //     datasets: [
+  //       {
+  //         label: "Skills",
+  //         data: [4, 4, 3, 3, 3, 4, 3, 1, 1],
+  //         backgroundColor: "rgba(194, 126, 63, 0.2)",
+  //         borderColor: "rgba(194, 126, 63, 1)",
+  //         borderWidth: 2,
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     scales: {
+  //       xAxes: [
+  //         {
+  //           ticks: {
+  //             beginAtZero: true,
+  //             max: 5,
+  //             stepSize: 1,
+  //             callback: function (value, index, values) {
+  //               let str = "";
+  //               if (value <= 5 && value > 4) {
+  //                 str = "Expert";
+  //               } else if (value <= 4 && value > 3) {
+  //                 str = "Advanced";
+  //               } else if (value <= 3 && value > 2) {
+  //                 str = "Intermediate";
+  //               } else if (value <= 2 && value > 1) {
+  //                 str = "Skilled";
+  //               } else if (value <= 1 && value > 0) {
+  //                 str = "Beginner";
+  //               } else {
+  //                 str = "";
+  //               }
+  //               return str;
+  //             },
+  //           },
+  //         },
+  //       ],
+  //     },
+  //     legend: {
+  //       labels: {
+  //         padding: 10,
+  //       },
+  //     },
+  //   },
   // });
-
-  // //click on arrow and show next group/dot
-  // $(document).on("click", "#next-thumbnails", (e) => {
-  //   if (grpIndex + 1 < groups.length) {
-  //     //hide last group
-  //     hideGroup(grpIndex);
-
-  //     //update dots
-  //     updateDots(grpIndex, grpIndex + 1);
-
-  //     //increase group index and show next group
-  //     grpIndex++;
-  //     addRemoveArrows(grpIndex); //add/remove arrows
-  //     showGroup(grpIndex);
-  //   }
-  // });
-
-  // //click on arrow and show previous group/dot
-  // $(document).on("click", "#prev-thumbnails", (e) => {
-  //   if (grpIndex - 1 >= 0) {
-  //     //hide last group
-  //     hideGroup(grpIndex);
-
-  //     //update dots
-  //     updateDots(grpIndex, grpIndex - 1);
-
-  //     //decrease group index and show previous group
-  //     grpIndex--;
-  //     addRemoveArrows(grpIndex); //add/remove arrows
-  //     showGroup(grpIndex);
-  //   }
-  // });
-
-  // window.addEventListener("resize", thumbnailResize);
-  // window.addEventListener("load", thumbnailResize);
 });
