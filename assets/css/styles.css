@@ -17,7 +17,8 @@
 
 body,
 .light-theme {
-  background-color: rgb(80, 89, 109);
+  background-color: #424958;
+  color: #fff
   margin: 0;
 }
 
@@ -328,7 +329,7 @@ h1,
 
 #projects {
   width: 100%;
-  background-color: rgb(203, 205, 221);
+  background-color: #7f818f;
   margin-top: 50px;
   padding-bottom: 50px;
 }
