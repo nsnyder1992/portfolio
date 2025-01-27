@@ -12,7 +12,7 @@ This is my portfolio website that I will keep track of all my completed projects
 2. CSS Creature
 3. Fuji Parameter Extractor
 4. Spotify API
-5. IoT project Hardware (Raspberry Pi)
+5. TTRPG Manual: LittleP6
 6. IoT Website
 7. Mini-Game
 
