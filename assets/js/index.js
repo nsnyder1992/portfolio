@@ -31,6 +31,10 @@ $(document).ready(function () {
     thumbnailSelect($("#api-thumbnail"), $("#api-content"));
   });
 
+  $(".lp6-thumbnail").click(() => {
+    thumbnailSelect($("#lp6-thumbnail"), $("#lp6-content"));
+  });
+
   $(".device-thumbnail").click(() => {
     thumbnailSelect($("#device-thumbnail"), $("#device-content"));
   });
